@@ -79,8 +79,8 @@ There are currently no tests written for this application.
 
 
 ## Questions Links
-[Heroku Deployment](http://damp-harbor-49836.herokuapp.com/)
-Github repository for [Cache Food Decisions](https://github.com/VictorMendez96/cache-food-decisions)
+[Deployed Link](/brokenlink/)
+Github repository for [YouBetcha!](https://github.com/brisco13/YouBetcha)
 
 Contact the creators: [Anne Linger](https://github.com/amccorkl), [Brisco Arechederra](https://github.com/brisco13), [Lindsey Lansford](https://github.com/lindsey-lansford), [Rachel Zaramba](https://github.com/rzaramba),  and [Solen Iyassu](https://github.com/SolenIyassu)
 
