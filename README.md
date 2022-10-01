@@ -1,70 +1,84 @@
-# You Betcha
+# YouBetcha!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This app provides a way to for people to bet their friends, track those bets, post the outcomes of those benefits (embarrasing or triumphant!) and keeps those records amongst friends. A Social Network designed for bragging rights - can you compete?
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## User Story
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```md
+AS an insanely competitive person,
+I WANT to track bets with friends
+SO THAT I can have tangible evidence of my superiority.
 
-### `npm test`
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+<summary><strong>Table of Contents</strong></summary>
 
-### `npm run build`
+  - [Description](#description)
+  - [User Story](#user-story)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing Guidelines](#contributing-guidelines)
+  - [Tests](#tests)
+  - [Languages, Skills and Credits](#languages-skills-and-credits)
+  - [Screenshots](#screenshots)
+  - [Questions and Links](#questions-and-links)
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation 
+```
+You can access this project here: (put link here) or download and investigate what makes YouBetcha! work!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone the repository
+- Run 'npm init' and then 'npm install'
+- Seed the database using: 'npm run seed'
+- run 'npm run start' to begin the execution of the project
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
+```
+From the root directory, type in 'node index.js' or 'npm run start'
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+Distributed under the **MIT** license.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing Guidelines
+Contributions help our open source community to continue to evolve, and any contributions are greatly appreciated. If you have a suggestion that would improve this code please follow the directions below. I require that any and all changes adhere to the Code of Conduct outlined in the [Contributor Covenant](https://www.contributor-covenant.org/).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tests
+There are currently no tests written for this application.
 
-## Learn More
+## Languages, Skills and Credits
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(TO BE BEEFED UP/UPDATED)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Javascript
+- Node.js
+- [Express](https://www.npmjs.com/package/express) is the webserver framework for Node.js.
+- [Sequelize](https://www.npmjs.com/package/sequelize) is used to execute SQL code and CRUD operations.
+- [MYSQL2](https://www.npmjs.com/package/mysql2) is used to initialize the database.
+- [dotenv](https://www.npmjs.com/package/dotenv) is used to host credentials in the environment file. 
+- [nodemailer](https://www.npmjs.com/package/nodemailer) is used to push the ingredient list to the user's email.
+- [Bootstrap](https://getbootstrap.com/)is used to design the layout and look of the app.
+- [bcrypt](https://www.npmjs.com/package/bcrypt) is used to hash passwords.
+- [axios](https://www.npmjs.com/package/axios) provides access to apis from the backend to the browser.
 
-### Code Splitting
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Questions Links
+[Heroku Deployment](http://damp-harbor-49836.herokuapp.com/)
+Github repository for [Cache Food Decisions](https://github.com/VictorMendez96/cache-food-decisions)
 
-### Making a Progressive Web App
+Contact the creators: [Anne Linger](https://github.com/amccorkl), [Brisco Arechederra](https://github.com/brisco13), [Lindsey Lansford](https://github.com/lindsey-lansford), [Rachel Zaramba](https://github.com/rzaramba),  and [Solen Iyassu](https://github.com/SolenIyassu)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
