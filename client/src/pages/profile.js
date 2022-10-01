@@ -1,0 +1,1 @@
+//profile page - likely use different components to differ between user's profile page vs friends profile page
