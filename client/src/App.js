@@ -40,29 +40,9 @@ function App() {
   return (
    <ApolloProvider client={client}>
       <Router>
-        <div className="container">
-          <Routes>
-            <Route
-              path="/"
-              element={<Feed />}>
-                <div className="App">
-                  <h1 className="title">YouBetcha!</h1>
-                </div> 
-            </Route>
-            <Route
-              path="/profile"
-              element={<Profile />}
-            />
-            <Route
-              path="/signup"
-              element={<SignUpForm />}
-            />
-            <Route
-              path="/login"
-              element={<LoginForm />}
-            />
-          </Routes>
-        </div>
+        
+         <h1 className="title">YouBetcha!</h1>
+               
       </Router>
     </ ApolloProvider>
   );
