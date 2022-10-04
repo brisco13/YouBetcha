@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const file1Schema = new Schema({
   attribute1: {
@@ -17,6 +17,6 @@ const file1Schema = new Schema({
   },
 });
 
-const file1 = model('file1', file1Schema);
+const file1 = model("file1", file1Schema);
 
 module.exports = file1;
