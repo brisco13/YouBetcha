@@ -1,8 +1,6 @@
 //component to render login component
-import React from 'react'
+import React from "react";
 
 export default function LoginForm() {
-  return (
-    <div>LoginForm</div>
-  )
+  return <div>LoginForm</div>;
 }
