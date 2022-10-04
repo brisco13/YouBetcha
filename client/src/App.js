@@ -8,13 +8,14 @@ import {
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 
+
 import Feed from './pages/Feed';
 import Profile from './pages/Profile';
-import Cards from './components/Cards';
-import Footer from './components/Footer';
-import Header from './components/Header';
+// import Cards from './components/Cards';
+// import Footer from './components/Footer';
+// import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import SignUpForm from './pages/SignUpForm';
 
 // Construct our main GraphQL API endpoint
@@ -59,7 +60,7 @@ function App() {
             element={<SignUpForm />}
           />
           <Route 
-            path="/me" 
+            path="/profile" 
             element={<Profile />}
           />
           {/* <Route 
