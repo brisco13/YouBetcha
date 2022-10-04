@@ -2,6 +2,7 @@
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30ede69d-f89c-4338-84d8-be594c598fce/deploy-status)](https://app.netlify.com/sites/youbetcha/deploys)
 
 
 ## Description
