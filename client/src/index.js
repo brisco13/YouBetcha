@@ -19,13 +19,15 @@ const theme = createTheme({
   },
   typography: {
     pFont: {
-      fontSize: "1.5rem",
-      color: "#CCC"
+      fontSize: "1.5rem"
+      
+      // color: "#CCC"
     },
     headingFont: {
       fontSize: "2.5rem",
       color: "#01579b",
-      fontWeight: "bold"
+      fontWeight: "bold",
+      
     }
 
   }
