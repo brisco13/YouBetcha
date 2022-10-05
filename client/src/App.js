@@ -11,14 +11,13 @@ import { setContext } from '@apollo/client/link/context';
 
 import Feed from './pages/Feed';
 import Profile from './pages/Profile';
+import Card from './pages/Card';
 // import Cards from './components/Cards';
 // import Footer from './components/Footer';
 // import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
 // import Navbar from './components/Navbar';
 import SignUpForm from './pages/SignUpForm';
-
-//need to add the theme provider for mui
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -64,6 +63,10 @@ function App() {
           <Route 
             path="/profile" 
             element={<Profile />}
+          />
+          <Route 
+            path="/card" 
+            element={<Card />}
           />
           {/* <Route 
             path="/profiles/:email" 

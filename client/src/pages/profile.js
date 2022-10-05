@@ -6,14 +6,16 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Feed from '@mui/icons-material/Feed';
 
 
-
-
 export default function Profile() {
 
   return(
     <Container>
+      {/* could be the Header component later */}
       <Box variant="contained" fullWidth>
-        <Typography variant="h5">
+        <Typography variant="h5"
+          align="center"
+          gutterBottom
+        >
           You Betcha!
         </Typography>
 
@@ -21,24 +23,23 @@ export default function Profile() {
 
       <Typography
         variant="headingFont"
-        align="center"
         gutterBottom
       >
-        Make a Bet
+        Your Profile
       </Typography>
 
+      {/* making a bet */}
       <form>
-        {/* making a bet */}
         <TextField
           id="filled-hidden-label-normal"
-          label="Find a person"
+          label="Single Text line"
           fullWidth
           // value={}
           // onChange={handleChange}
         />
         <TextField
           id="filled-hidden-label-normal"
-          label="What is Your Bet?"
+          label="Text Area"
           fullWidth
           // value={}
           // onChange={handleChange}
@@ -56,6 +57,8 @@ export default function Profile() {
         align="center"
         color="secondary" 
         fontSize="large"
+        //padding around the button box
+        sx={{ p:2 }}
       >
         <Button
           startIcon={<Feed />}
