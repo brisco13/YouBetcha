@@ -1,85 +1,76 @@
 import React from 'react'
 
-import { Container, Button, ButtonGroup, Typography, TextField, Box } from '@mui/material';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Feed from '@mui/icons-material/Feed';
+import { Container, Button, Typography, Box, Paper } from '@mui/material';
 
 
 export default function Profile() {
-
   return(
-    <Container>
-      {/* could be the Header component later */}
-      <Box variant="contained" fullWidth>
-        <Typography variant="h5"
-          align="center"
-          gutterBottom
-        >
-          You Betcha!
-        </Typography>
-
-      </Box>
-
+    <Container> 
       <Typography
-        variant="headingFont"
+        variant="h5"
+        color="primary"
+        fontWeight="bold"
         gutterBottom
       >
         Your Profile
       </Typography>
 
-      {/* making a bet */}
-      <form>
-        <TextField
-          id="filled-hidden-label-normal"
-          label="Single Text line"
-          fullWidth
-          // value={}
-          // onChange={handleChange}
-        />
-        <TextField
-          id="filled-hidden-label-normal"
-          label="Text Area"
-          fullWidth
-          // value={}
-          // onChange={handleChange}
-          multiline
-          rows={4}
-        />
-      </form>
       
+      <Box>
+        {/* username, total stats (wins/loses) */}
+        <Typography>Username here; Total Stats: Wins loses</Typography>
+        
+      </Box>
+
+      <Box>
+        <Typography variant="h6" color="primary" fontWeight="bold"
+        align="center">
+          My Bets
+        </Typography>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+        <Paper>
+          date stamp
+          You bet...
+        </Paper>
+
+
+      </Box>
       <br />
-
-      
-      {/* The footer button bar */}
-      <ButtonGroup
-        variant="contained"
-        align="center"
-        color="secondary" 
-        fontSize="large"
-        //padding around the button box
-        sx={{ p:2 }}
-      >
-        <Button
-          startIcon={<Feed />}
-        >Home
-        </Button>
-        
-        <Button
-          onClick={() => console.log("Bet button clicked")}
-          type="submit"
-          fontSize="large"
-          startIcon={<AddCircleIcon />}>    
-          Make Bet
-        </Button>
-                
-        <Button
-          startIcon={<PersonPinIcon />}
-          >My Profile
-        </Button>          
-        
-      </ButtonGroup>
-
     </Container>
 
 
