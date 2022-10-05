@@ -1,10 +1,10 @@
 import React from 'react'
-import Container from '@mui/material/Container';
-import { Button, ButtonGroup, Typography } from '@mui/material';
+
+import { Container, Button, ButtonGroup, Typography, TextField, Box } from '@mui/material';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Feed from '@mui/icons-material/Feed';
-import TextField from '@mui/material/TextField';
+
 
 
 
@@ -12,10 +12,15 @@ export default function Profile() {
 
   return(
     <Container>
+      <Box variant="contained" fullWidth>
+        <Typography variant="h5">
+          You Betcha!
+        </Typography>
+
+      </Box>
+
       <Typography
-        variant="h4"
-        fontWeight="bold"
-        color="primary"
+        variant="headingFont"
         align="center"
         gutterBottom
       >
@@ -44,33 +49,32 @@ export default function Profile() {
       
       <br />
 
+      
+      {/* The footer button bar */}
       <ButtonGroup
         variant="contained"
         align="center"
-        color="error"
+        color="secondary" 
         fontSize="large"
       >
         <Button
           startIcon={<Feed />}
-        >Home</Button>
-
-        <Feed
-          fontSize="large"
-          color="error"
-        />
+        >Home
+        </Button>
+        
         <Button
           onClick={() => console.log("Bet button clicked")}
           type="submit"
-          color="error"
           fontSize="large"
           startIcon={<AddCircleIcon />}>    
           Make Bet
         </Button>
                 
-        <PersonPinIcon
-            color="error" //color of icon
-            fontSize="large"
-        />
+        <Button
+          startIcon={<PersonPinIcon />}
+          >My Profile
+        </Button>          
+        
       </ButtonGroup>
 
     </Container>
