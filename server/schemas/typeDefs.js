@@ -1,28 +1,52 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type file1 {
-    attribute1: String
-    attribute2: String
-    attribute3: Num
-    attribute4: Num
+  type bet {
+    id: ID!
+    user_id: [user.id]
+    headline: String
+    terms: String!
+    image: String!
+    comment: [comment]
+    winner: [winner]
+    loser: [user]
   }
 
-  type file2 {
-    attribute1: String
-    attribute2: String
-    attribute3: Num
-    attribute4: Num
+  type comment {
+    bet: ID!
+    user: [user.id]
+    betID: String
+    body: String
+    reaction: [reaction]
+  }
+  type reaction {
+    id: ID
+    commentId: String
+    object: char
+    user: [user.id]
+  }
+
+  type user {
+    id: ID!
+    username: String!
+    password: String!
+    email: String!
+    winCount: String
+    betCount: Num
+    bets: [bet]
+    friends: [users]
   }
 
   type Query {
-    query1: [file1]
-    query2: [file2]
+    User: [user]
+    Comments: [comment]
+    Reactions: [reaction]
+    Bets: [bet]
   }
 
   type Mutation {
-    mutation1(attribute1: String!, attribute3: String!): file2
-    mutation2(attribute1: String!, attribute3: String!): file2
+    mutation1(comment: String!, user_id: String!): 
+   
   }
 `;
 
