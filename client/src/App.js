@@ -11,13 +11,11 @@ import { setContext } from '@apollo/client/link/context';
 
 import Feed from './pages/Feed';
 import Profile from './pages/Profile';
-import Card from './pages/Card';
-// import Cards from './components/Cards';
-// import Footer from './components/Footer';
-// import Header from './components/Header';
+import MakeABet from './pages/MakeABet'
+import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
-// import Navbar from './components/Navbar';
 import SignUpForm from './pages/SignUpForm';
+import Navbar from './components/Navbar';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -47,32 +45,35 @@ function App() {
   return (
    <ApolloProvider client={client}>
       <Router>
-      <Routes>
-          <Route 
-            path="/"
-            element={<Feed />}
-          />
-          <Route 
-            path="/login" 
-            element={<LoginForm />}
-          />
-          <Route 
-            path="/signup" 
-            element={<SignUpForm />}
-          />
-          <Route 
-            path="/profile" 
-            element={<Profile />}
-          />
-          <Route 
-            path="/card" 
-            element={<Card />}
-          />
-          {/* <Route 
-            path="/profiles/:email" 
-            element={<Profile />}
-          /> */}
-        </Routes>
+        <div>
+          <Header />
+            <div>
+              <Routes>
+                <Route 
+                  path="/"
+                  element={<Feed />}
+                />
+                <Route 
+                  path="/login" 
+                  element={<LoginForm />}
+                />
+                <Route 
+                  path="/signup" 
+                  element={<SignUpForm />}
+                />
+                <Route 
+                  // needs to be path="/profile/:profileId" 
+                    path="/profile" 
+                    element={<Profile />}
+                  />
+                <Route 
+                  path="/bet" 
+                  element={<MakeABet />}
+                />
+              </Routes>
+            </div>
+          <Navbar />
+        </div>
       </Router>
     </ ApolloProvider>
   );

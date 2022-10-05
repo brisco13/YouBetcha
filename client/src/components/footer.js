@@ -1,1 +1,0 @@
-//footer component (maybe who developed - maybe our portfolio links?)
