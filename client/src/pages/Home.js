@@ -15,6 +15,11 @@ export default function Home() {
       </Stack>
       <Stack>
         Active/Open Bets
+        <Box>
+          <Typography variant="h5">
+           React to the bet: emoji or comment 
+          </Typography>
+        </Box>
       </Stack>
     </Container>
   )
