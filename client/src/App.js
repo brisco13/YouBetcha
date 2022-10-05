@@ -18,6 +18,8 @@ import LoginForm from './pages/LoginForm';
 // import Navbar from './components/Navbar';
 import SignUpForm from './pages/SignUpForm';
 
+//need to add the theme provider for mui
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
