@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 import { Button, ButtonGroup, Typography, Container } from '@mui/material';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
@@ -21,7 +21,7 @@ const Navbar = () => {
         >
         <Button
           startIcon={<Feed />}
-        >Home
+        >Home Feed
         </Button>
 
         <Button

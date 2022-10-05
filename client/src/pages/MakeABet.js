@@ -1,6 +1,6 @@
+import * as React from 'react'
 import { Container, Button, ButtonGroup, Typography, TextField, Box } from '@mui/material';
 
-import React from 'react'
 
 const MakeABet = () => {
   return (

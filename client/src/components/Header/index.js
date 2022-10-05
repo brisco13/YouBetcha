@@ -1,5 +1,5 @@
 //header component (branding, logo, etc)
-import React from 'react'
+import * as React from 'react'
 
 import { Container, Button,  Typography, Box } from '@mui/material';
 

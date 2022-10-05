@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 
 
-import Feed from './pages/Feed';
+import Home from './pages/Home';
 import Profile from './pages/Profile';
 import MakeABet from './pages/MakeABet'
 import Header from './components/Header';
@@ -51,7 +51,7 @@ function App() {
               <Routes>
                 <Route 
                   path="/"
-                  element={<Feed />}
+                  element={<Home />}
                 />
                 <Route 
                   path="/login" 
