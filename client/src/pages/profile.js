@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Container, Button, Typography, Box, Paper } from '@mui/material';
+import { Container, Typography, Box, Paper } from '@mui/material';
 
 
 export default function Profile() {
@@ -27,46 +27,44 @@ export default function Profile() {
         align="center">
           My Bets
         </Typography>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
+        <Paper elevation={24}
+        square>
           date stamp
           You bet...
         </Paper>
-        <Paper>
-          date stamp
-          You bet...
-        </Paper>
-        <Paper>
-          date stamp
-          You bet...
-        </Paper>
-        <Paper>
-          date stamp
-          You bet...
-        </Paper>
+        
+        
+        
 
 
       </Box>
