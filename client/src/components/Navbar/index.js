@@ -17,8 +17,9 @@ const Navbar = () => {
         aria-label="nav buttons"
         color="secondary" 
         fontSize="large"
+        fullWidth
         //padding around the button box
-        sx={{ p:2 }}
+        sx={{ padding: 1 }}
         >
         <Button
           onClick={console.log("Home button clicked, not working yet")}

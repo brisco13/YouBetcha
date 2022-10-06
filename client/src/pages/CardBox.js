@@ -10,7 +10,7 @@ export default function CardBox() {
         <CardHeader
           title="Brisco bet Anne"
           subheader="createdAt"
-          sx={{border: 2}}
+          sx={{border: 1}}
         > {/* {betTitle} */}</CardHeader>
         <CardMedia 
           component="img"
@@ -18,7 +18,7 @@ export default function CardBox() {
           image="http://via.placeholder.com/75"
           alt="placeholder box"
           variant="outlined"
-          sx={{ border: 2 }}
+          sx={{ border: 1 }}
           >
         </CardMedia>
         <CardContent>
@@ -29,14 +29,23 @@ export default function CardBox() {
 
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="heart reaction">
+        <IconButton
+          aria-label="heart reaction">
             <FavoriteIcon />
           </IconButton>   
-          <IconButton aria-label="heart breaking">
+        <IconButton
+          aria-label="heart breaking">
             <HeartBrokenIcon />
           </IconButton>
         <TextareaAutosize 
-          aria-label="comment" placeholder="comment" style={{ width: 200 }}></TextareaAutosize>
+          aria-label="comment"
+          value="comment"
+          name="comment"
+          placeholder="comment"
+          style={{ width: 200 }}
+          
+        >
+          </TextareaAutosize>
         </CardActions> 
     </Card> 
   )
