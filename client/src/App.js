@@ -16,7 +16,10 @@ import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
 import SignUpForm from './pages/SignUpForm';
 import Navbar from './components/Navbar';
+
 import BottomNav from './components/Navbar/BottomNav';
+import CardBox from './pages/CardBox';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -70,6 +73,10 @@ function App() {
                 <Route 
                   path="/bet" 
                   element={<MakeABet />}
+                />
+                <Route 
+                  path="/card" 
+                  element={<CardBox />}
                 />
               </Routes>
             </div>
