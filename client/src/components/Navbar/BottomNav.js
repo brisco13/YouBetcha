@@ -6,7 +6,7 @@ import PersonPinIcon from "@mui/icons-material/PersonPin";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Feed from "@mui/icons-material/Feed";
 import { Paper } from "@mui/material";
-import Tooltip from '@mui/material/Tooltip';
+
 
 
 export default function BottomNav() {
@@ -26,13 +26,11 @@ export default function BottomNav() {
         value="add-bet"
         icon={<AddCircleIcon />}
         />
-        {/* <Tooltip placement="bottom"> */}
         <BottomNavigationAction
         label="Profile"
         value="profile"
         icon={<PersonPinIcon />}
           />
-          {/* </Tooltip> */}
       </BottomNavigation>
       </Paper>
   );
