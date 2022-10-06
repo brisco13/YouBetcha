@@ -4,14 +4,14 @@ const typeDefs = gql`
   type file1 {
     attribute1: String
     attribute2: String
-    attribute3: Num
-    attribute4: Num
+    attribute3: String
+    attribute4: String
   }
   type file2 {
     attribute1: String
     attribute2: String
-    attribute3: Num
-    attribute4: Num
+    attribute3: String
+    attribute4: String
   }
   type Query {
     query1: [file1]
