@@ -1,4 +1,4 @@
-const file1 = require('./file1');
-const file2 = require('./file2');
+const Bet = require('./Bet');
+const User = require('./User');
 
-module.exports = { file1, file2 };
+module.exports = { Bet, User };
