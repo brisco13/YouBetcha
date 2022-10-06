@@ -26,15 +26,15 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_BET = gql`
-  mustation addBet($betText: String!, $betAuthor: String!) {
+  mutation addBet($betText: String!, $betAuthor: String!) {
     addBet(betText: $betText, betAuthor: $betAuthor) {
       _id 
-      betText
+      betDescription
       betAuthor
       createdAt
       comments{
         _id   
-        commentText
+        body
       }
     }
   }
@@ -43,21 +43,21 @@ export const ADD_BET = gql`
 export const ADD_COMMENT = gql`
   mutation addComment(
     $betId: ID!
-    $commentText: String!
+    $body: String!
     $commentAuthor: String!
   ) {
     addComment(
       betId: $betId
-      commentText: $commentText
+      body: $body
       commentAuthor: $commentAuthor
       )
       _id
-      betText
+      betDescription
       betAuthor
       createdAt
       comments{
         _id 
-        commentText
+        body
       }
   }
 `;

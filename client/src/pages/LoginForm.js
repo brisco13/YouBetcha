@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
 export default function LoginForm() {
