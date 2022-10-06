@@ -6,6 +6,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Feed from '@mui/icons-material/Feed';
 
 
+
 // {/* The footer button bar */ }
 const Navbar = () => {
   return (
@@ -13,21 +14,23 @@ const Navbar = () => {
     <Container>
       <ButtonGroup
         variant="contained"
-        align="center"
+        aria-label="nav buttons"
         color="secondary" 
         fontSize="large"
+        fullWidth
         //padding around the button box
-        sx={{ p:2 }}
+        sx={{ padding: 1 }}
         >
         <Button
+          onClick={console.log("Home button clicked, not working yet")}
           startIcon={<Feed />}
         >Home Feed
         </Button>
 
         <Button
-          onClick={() => console.log("Bet button clicked")}
+          onClick={() => console.log("Bet button clicked, not working yet")}
           type="submit"
-          fontSize="large"
+          
           startIcon={<AddCircleIcon />}>    
           Make Bet
         </Button>

@@ -36,6 +36,7 @@ export default function SignUpForm() {
           className="form-input"
           label="Last Name"
           name="lastName"
+          value=""
           fullWidth
           // value={formState.lastName}
           // onChange={handleChange}
@@ -44,6 +45,7 @@ export default function SignUpForm() {
           className="form-input"
           label="username"
           name="username"
+          value=""
           fullWidth
           // value={formState.firstName}
           // onChange={handleChange}
@@ -53,6 +55,7 @@ export default function SignUpForm() {
           label="Email"
           type="email"
           name="email"
+          value=""
           fullWidth
           // value={formState.email}
           // onChange={handleChange}
@@ -61,16 +64,18 @@ export default function SignUpForm() {
           className="form-input"
           label="Password (use at least 1 letter, 1 number, and 7 characters"
           type="password"
-          name="name"
+          name="password"
+          value=""
           fullWidth
           // value={formState.password}
           // onChange={handleChange}
         />
         <Button
           variant="contained"
+          name="signUp"
           value="signUp"
           type="submit"
-          onClick={console.log("you clicked me")}
+          onSubmit={console.log("form submit, you clicked me")}
           sx={{ m: 3, width: 150 }}
         >
           Sign Up
@@ -78,11 +83,10 @@ export default function SignUpForm() {
       </form>
 
       {/* Take user to Login Page */}
-      <Typography>Already a member?</Typography>
+      <Typography>Already a member? </Typography>
       <Button variant="contained"
-        onClick={console.log("you clicked me")}
-      >Log In</Button> 
-      
+        onClick={console.log("go to login, you clicked me")}
+      >Log In</Button>
       
     </Container>
   )

@@ -8,17 +8,17 @@ const Header = () => {
 
   return (
     <Container>
-      
       <Box>
         <Typography 
           align="center"
           gutterBottom
+          variant="h5"
+          color="primary"
+          fontWeight="bold"
         >
           You Betcha!
         </Typography>
-
       </Box>
-      <br />
     </Container>
   );
 };
