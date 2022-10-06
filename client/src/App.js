@@ -16,6 +16,7 @@ import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
 import SignUpForm from './pages/SignUpForm';
 import Navbar from './components/Navbar';
+import BottomNav from './components/Navbar/BottomNav';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -72,7 +73,8 @@ function App() {
                 />
               </Routes>
             </div>
-          <Navbar />
+          {/* <Navbar /> */}
+          <BottomNav/>
         </div>
       </Router>
     </ ApolloProvider>
