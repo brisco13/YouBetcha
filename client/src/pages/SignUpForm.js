@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
 
@@ -42,6 +42,14 @@ export default function SignUpForm() {
         />
         <TextField
           className="form-input"
+          label="username"
+          name="username"
+          fullWidth
+          // value={formState.firstName}
+          // onChange={handleChange}
+        />
+        <TextField
+          className="form-input"
           label="Email"
           type="email"
           name="email"
@@ -70,9 +78,11 @@ export default function SignUpForm() {
       </form>
 
       {/* Take user to Login Page */}
+      <Typography>Already a member?</Typography>
       <Button variant="contained"
         onClick={console.log("you clicked me")}
-      >Log In</Button>
+      >Log In</Button> 
+      
       
     </Container>
   )
