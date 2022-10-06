@@ -1,5 +1,5 @@
 const { ServerDescription } = require("mongodb");
-const { file1, file2 } = require("../models");
+const { comment, user, reaction, thought } = require("../models");
 const { seed, seedData } = require("../seeds");
 const { typeDefs } = require("./typeDefs");
 
@@ -9,6 +9,12 @@ const resolvers = {
       return;
     },
     commment: async (parent, { _id }) => {
+      return;
+    },
+    reaction: async (parent, { _id }) => {
+      return;
+    },
+    thought: async (parent, { _id }) => {
       return;
     },
   },

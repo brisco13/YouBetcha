@@ -1,5 +1,3 @@
-const { gql } = require("apollo-server-express");
-
 const typeDefs = gql`
   type bet {
     id: ID!
@@ -34,17 +32,18 @@ const typeDefs = gql`
     winCount: String
     betCount: Num
     bets: [bet]
-    friends: [users]
+    friends: [user]
   }
 
   type Query {
-    User: [user]
+    User: [user]:[user_id]
     Comments: [comment]
     Reactions: [reaction]
-    Bets: [bet]
+    Bets: [bet]:[bet_id]
   }
 
   type Mutation {
+    createUser: 
     mutation1(comment: String!, user_id: String!): 
    
   }
