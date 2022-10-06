@@ -1,4 +1,6 @@
-const file1 = require("./file1");
-const fil2 = require("./file2");
+const User = require("./user");
+const Bet = require("./bet");
+const Comment = require("./comment");
+//do we need the reaction here too?
 
-module.exports = { file1, file2 };
+module.exports = { User, Bet, Comment };
