@@ -10,7 +10,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 import Home from './pages/Home';
-import Profile from './pages/Profile';
+import Profile2 from './pages/Profile2';
 import MakeABet from './pages/MakeABet'
 import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
@@ -66,7 +66,7 @@ function App() {
                 <Route 
                   // needs to be path="/profile/:profileId" 
                     path="/profile" 
-                    element={<Profile />}
+                    element={<Profile2 />}
                   />
                 <Route 
                   path="/bet" 
