@@ -15,8 +15,6 @@ import MakeABet from './pages/MakeABet'
 import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
 import SignUpForm from './pages/SignUpForm';
-import Navbar from './components/Navbar';
-
 import BottomNav from './components/Navbar/BottomNav';
 import CardBox from './pages/CardBox';
 

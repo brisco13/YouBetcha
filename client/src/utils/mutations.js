@@ -26,38 +26,49 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_BET = gql`
-  mutation addBet($betText: String!, $betAuthor: String!) {
-    addBet(betText: $betText, betAuthor: $betAuthor) {
+  mutation addBet($betText: String!, $betAuthor: String!) { 
+    addBet(desc: $desc, 
+    betAuthor: $betAuthor) {
       _id 
-      betDescription
-      betAuthor
+      desc
+      # betAuthor
+      participants
       createdAt
+      winner
       comments{
         _id   
-        body
+        commentText
+        commentAuthor
+      }
+      reactions {
+        _id
+        reactionBody
       }
     }
   }
 `;
 
-export const ADD_COMMENT = gql`
-  mutation addComment(
+export const ADD_REACTIONS = gql`
+  mutation addReactions(
     $betId: ID!
-    $body: String!
-    $commentAuthor: String!
+    $reactionBody: String!
+    # $reactionAuthor: String!
+    $username: String!
   ) {
-    addComment(
+    addReaction(
       betId: $betId
-      body: $body
-      commentAuthor: $commentAuthor
+      reactionBody: $reactionBody
+      # reactionAuthor
+      username: $username
       )
       _id
-      betDescription
-      betAuthor
+      desc
+      # betAuthor
       createdAt
       comments{
         _id 
-        body
+        commentText
+        commentAuthor
       }
   }
 `;
