@@ -1,15 +1,17 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-
+//put authentication middleware here
+require('dotenv').config();
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-
+console.log(process.env.MONGODB_URI);
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  //context: auth middleware here,
 });
 
 app.use(express.urlencoded({ extended: false }));

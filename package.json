@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "apollo-server-lambda": "^2.26.0",
+    "dotenv": "^16.0.3",
     "graphql": "^14.7.0",
     "mongodb": "^4.10.0"
   }
