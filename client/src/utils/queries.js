@@ -6,11 +6,24 @@ export const QUERY_USER = gql`
       _id 
       username
       email
+      friends
       bets {
-        betDescription
-        betAuthor
-        betFriend
-        createdAt 
+        _id
+        participants
+        # betAuthor
+        desc
+        createdAt
+        comments {
+          _id
+          commentText
+          commentAuthor
+        }
+        winner
+        reactions {
+          _id
+          reactionBody
+          # reactionAuthor
+        } 
       }
     }
   }
@@ -21,10 +34,23 @@ export const QUERY_BETS = gql`
   query getBets {
     bets {
       _id 
-      betDescription
-      betAuthor
-      betFriend
+      participants
+      desc
+      # feel like we need a bet author here? betAuthor
       createdAt 
+      winner
+      reactions {
+        _id 
+        reactionBody 
+        # reactionAuthor
+        createdAt
+      }
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `;
@@ -33,13 +59,24 @@ export const QUERY_SINGLE_BET = gql`
   query getSingleBet($betId: ID!) {
     bet(betId: $betId) {
       _id 
-      betDescription
-      betAuthor
+      participants
+      desc
+      # betAuthor
       createdAt 
-      comments {
+      winner
+      reactions {
         _id 
-        body 
+        reactionBody 
+        # reactionAuthor
+        createdAt
       }
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
+
     }
   }
 `;
