@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Container, Typography, Box, Paper } from '@mui/material';
 
 
-export default function Profile() {
+export default function Profile2() {
   return(
     <Container> 
       <Typography
