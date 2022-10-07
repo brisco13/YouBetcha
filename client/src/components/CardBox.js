@@ -6,7 +6,7 @@ import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
 
 export default function CardBox() {
   return (
-    <Card sx={{ minWidth: 275 }} raised variant="outlined" sx={{ margin: 5, border: 2}}>
+    <Card raised variant="outlined" sx={{ minWidth: 275, margin: 5, border: 2}}>
         <CardHeader
           title="Brisco bet Anne"
           subheader="createdAt"
