@@ -10,7 +10,6 @@ export const QUERY_USER = gql`
       bets {
         _id
         participants
-        # betAuthor
         desc
         createdAt
         comments {
@@ -22,7 +21,6 @@ export const QUERY_USER = gql`
         reactions {
           _id
           reactionBody
-          # reactionAuthor
         } 
       }
     }
@@ -36,13 +34,11 @@ export const QUERY_BETS = gql`
       _id 
       participants
       desc
-      # feel like we need a bet author here? betAuthor
       createdAt 
       winner
       reactions {
         _id 
         reactionBody 
-        # reactionAuthor
         createdAt
       }
       comments {
@@ -61,13 +57,11 @@ export const QUERY_SINGLE_BET = gql`
       _id 
       participants
       desc
-      # betAuthor
       createdAt 
       winner
       reactions {
         _id 
         reactionBody 
-        # reactionAuthor
         createdAt
       }
       comments {
