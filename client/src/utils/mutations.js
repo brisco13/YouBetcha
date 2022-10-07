@@ -33,6 +33,7 @@ export const ADD_BET = gql`
       desc
       createdAt
       winner
+      # loser
       comments{
         _id   
         commentText
