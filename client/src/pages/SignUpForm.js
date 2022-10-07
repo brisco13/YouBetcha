@@ -44,10 +44,10 @@ export default function SignUpForm() {
     <Container className="container">
       {/* could be the Header component later */}
       <Box variant="contained" fullWidth>
-        <div className="signup-card">
+        <div className="sign-log-card">
 
           <Typography variant="pFont" gutterBottom>
-            Create an Account 
+            Create an Account
           </Typography>
           
           {data ? (
@@ -57,86 +57,86 @@ export default function SignUpForm() {
             </p>
           ) : (
           
-          <div>
-            <form onSubmit={handleFormSubmit}>  
-              <TextField
-                fullWidth
-                className="form-input"
-                label="First Name"
-                placeholder="first name"
-                name="firstName"
-                type="text"
-                value={formState.firstName}
-                onChange={handleChange}
-
-              />
-              <TextField
-                fullWidth
-                className="form-input"
-                label="Last Name"
-                name="lastName"
-                type="text"
-                value={formState.lastName}
-                onChange={handleChange}
-
-              />
-              <TextField
-                fullWidth
-                className="form-input"
-                label="username or screen name"
-                name="username"
-                type="text"
-                value={formState.name}
-                onChange={handleChange}
-
-              />
-              <TextField
-                className="form-input"
-                label="Email"
-                type="email"
-                name="email"
-                value={formState.email}
-                fullWidth
-                // value={formState.email}
-                onChange={handleChange}
-              />
-              <TextField
-                className="form-input"
-                placeholder="*******"
-                label="Password (use at least 1 letter, 1 number, and 7 characters"
-                type="password"
-                name="password"
-                fullWidth
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <Button className="submit-btn"
-                variant="contained"
-                name="signUp"
-                type="submit"
-                sx={{ m: 3, width: 150 }}
-                >
-                Sign Up
-              </Button>
-            </form>
-
-                <p>
-                  <Typography>Already a member?{' '}</Typography>
-                  <Button variant="contained" className="login-btn">
-                    <Link to="/login">Log In</Link>
-                  </Button>
-                
-                </p>    
-          </div>    
-        )}
-            
-        {error && (
             <div>
-              <Typography variant="secondary">You didn't fill in all the fields</Typography>  
+              <form onSubmit={handleFormSubmit}>
+                <TextField
+                  fullWidth
+                  className="form-input"
+                  label="First Name"
+                  placeholder="first name"
+                  name="firstName"
+                  type="text"
+                  value={formState.firstName}
+                  onChange={handleChange}
+
+                />
+                <TextField
+                  fullWidth
+                  className="form-input"
+                  label="Last Name"
+                  name="lastName"
+                  type="text"
+                  value={formState.lastName}
+                  onChange={handleChange}
+
+                />
+                <TextField
+                  fullWidth
+                  className="form-input"
+                  label="username or screen name"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+
+                />
+                <TextField
+                  className="form-input"
+                  label="Email"
+                  type="email"
+                  name="email"
+                  value={formState.email}
+                  fullWidth
+                  // value={formState.email}
+                  onChange={handleChange}
+                />
+                <TextField
+                  className="form-input"
+                  placeholder="*******"
+                  label="Password (use at least 1 letter, 1 number, and 7 characters"
+                  type="password"
+                  name="password"
+                  fullWidth
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <Button className="submit-btn"
+                  variant="contained"
+                  name="signUp"
+                  type="submit"
+                  sx={{ m: 3, width: 150 }}
+                >
+                  Sign Up
+                </Button>
+              </form>
+
+              <p>
+                <Typography>Already a member?{' '}</Typography>
+                <Button variant="contained"
+                  className="sign-log-btn">
+                  <Link to="/login">Log In</Link>
+                </Button>
+              </p>
             </div>
-        )}      
-      </div>
+          )}
+            
+          {error && (
+            <div>
+              <Typography variant="secondary">You didn't fill in all the fields</Typography>
+            </div>
+          )}
+        </div>
       </Box>
     </Container>
-  )
-}
+  );
+};
