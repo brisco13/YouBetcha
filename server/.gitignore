@@ -1,4 +1,5 @@
 # dependencies
+
 **/node_modules
 **/.pnp
 .pnp.js
@@ -16,11 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-dotenv
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Local Netlify folder
-.netlify
