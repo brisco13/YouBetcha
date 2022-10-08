@@ -6,12 +6,14 @@ export const QUERY_USER = gql`
       _id 
       username
       email
+      profilePic
       friends
       bets {
         _id
         participants
         desc
         createdAt
+        postImage
         comments {
           _id
           commentText
@@ -34,6 +36,7 @@ export const QUERY_BETS = gql`
       _id 
       participants
       desc
+      postImage
       createdAt 
       winner
       reactions {
@@ -58,6 +61,7 @@ export const QUERY_SINGLE_BET = gql`
       participants
       desc
       createdAt 
+      postImage
       winner
       reactions {
         _id 
@@ -71,6 +75,15 @@ export const QUERY_SINGLE_BET = gql`
         createdAt
       }
 
+    }
+  }
+`;
+
+export const QUERY_FRIENDS = gql`
+  query {
+    friends {
+      _id
+      username
     }
   }
 `;
