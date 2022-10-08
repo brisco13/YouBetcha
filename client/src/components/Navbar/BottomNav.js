@@ -18,8 +18,8 @@ export default function BottomNav() {
 
   return (
     <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={20}>
-      <BottomNavigation showLabels sx={{ width: 500 }} value={value} onChange={handleChange}>
-        
+      <BottomNavigation fullWidth showLabels value={value} onChange={handleChange}>
+      
       <BottomNavigationAction label="Feed" value="feed" icon={<Feed />} />
       <BottomNavigationAction
         label="Make a Bet"
