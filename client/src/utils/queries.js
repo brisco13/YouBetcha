@@ -35,12 +35,8 @@ export const QUERY_BETS = gql`
       _id
       participants
       desc
-<<<<<<< HEAD
-      createdAt
-=======
       postImage
-      createdAt 
->>>>>>> 832924056a57b424be2693cf82ccb4c430185770
+      createdAt
       winner
       reactions {
         _id
@@ -63,12 +59,8 @@ export const QUERY_SINGLE_BET = gql`
       _id
       participants
       desc
-<<<<<<< HEAD
       createdAt
-=======
-      createdAt 
       postImage
->>>>>>> 832924056a57b424be2693cf82ccb4c430185770
       winner
       reactions {
         _id
@@ -84,8 +76,6 @@ export const QUERY_SINGLE_BET = gql`
     }
   }
 `;
-<<<<<<< HEAD
-=======
 
 export const QUERY_FRIENDS = gql`
   query {
@@ -95,4 +85,3 @@ export const QUERY_FRIENDS = gql`
     }
   }
 `;
->>>>>>> 832924056a57b424be2693cf82ccb4c430185770
