@@ -1,9 +1,9 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
-      _id 
+      _id
       username
       email
       friends
@@ -21,24 +21,23 @@ export const QUERY_USER = gql`
         reactions {
           _id
           reactionBody
-        } 
+        }
       }
     }
   }
 `;
 
-
 export const QUERY_BETS = gql`
   query getBets {
     bets {
-      _id 
+      _id
       participants
       desc
-      createdAt 
+      createdAt
       winner
       reactions {
-        _id 
-        reactionBody 
+        _id
+        reactionBody
         createdAt
       }
       comments {
@@ -54,14 +53,14 @@ export const QUERY_BETS = gql`
 export const QUERY_SINGLE_BET = gql`
   query getSingleBet($betId: ID!) {
     bet(betId: $betId) {
-      _id 
+      _id
       participants
       desc
-      createdAt 
+      createdAt
       winner
       reactions {
-        _id 
-        reactionBody 
+        _id
+        reactionBody
         createdAt
       }
       comments {
@@ -70,7 +69,6 @@ export const QUERY_SINGLE_BET = gql`
         commentAuthor
         createdAt
       }
-
     }
   }
 `;
