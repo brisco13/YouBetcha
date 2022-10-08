@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import {
@@ -37,8 +37,16 @@ export default function Profile2() {
     return (
       <h4>
         {" "}
-        You need to be logged in to see this. Use the nav links to sign up or
-        log in!{" "}
+        <Box>
+        You need to be logged in to participate in You Betcha. Please use the {' '}
+          <Button variant="contained">
+            <Link to="/login" >login </Link>
+          </Button>
+          {" "} OR {" "}
+          <Button variant="contained">
+            <Link to="/signup" >signup.</Link>
+          </Button>
+        </Box>{" "}
       </h4>
     );
   }
