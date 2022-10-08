@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 import {
   Container,
@@ -12,7 +14,35 @@ import {
   Grid,
 } from "@mui/material";
 
+import Auth from "../utils/auth";
+import { QUERY_USER } from "../utils/queries";
+
 export default function Profile2() {
+  const { username: userParam } = useParams();
+
+  const { loading, data } = useQuery(QUERY_USER, {
+    variables: { username: userParam },
+  });
+
+  const user = data?.me || data?.user || {};
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Navigate to="/profile" />;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user?.username) {
+    return (
+      <h4>
+        {" "}
+        You need to be logged in to see this. Use the nav links to sign up or
+        log in!{" "}
+      </h4>
+    );
+  }
+
   return (
     <Container>
       <Typography variant="h6" color="primary" fontWeight="bold" gutterBottom>
@@ -67,7 +97,13 @@ export default function Profile2() {
 
       <Divider />
       <div>
-        <Box m={2} pt={3} display="flex" alignItems="center" justifyContent="center">
+        <Box
+          m={2}
+          pt={3}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Button variant="contained" size="large" type="submit">
             Make A Bet
           </Button>
