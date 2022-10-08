@@ -1,12 +1,7 @@
 // display feed of bets from friend network
 import React, { useState } from 'react';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_BETS } from '../utils/queries'
-import BetForm from '../components/BetForm';
-import BetList from '../components/BetList';
-
 import CardBox from '../components/CardBox';
-import { Container, Typography, Box, Grid, Card } from '@mui/material';
+import { Container, Typography, Button, Link } from '@mui/material';
 
 
 
@@ -26,9 +21,7 @@ export default function Home() {
         {/* BetFiller is merely a placeholder for now*/}
         <CardBox /> 
       </div>  
-      <div>
-        <BetForm />
-      </div>
+      
             
        
     </Container>

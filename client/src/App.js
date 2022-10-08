@@ -11,7 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Profile2 from './pages/Profile2';
-import MakeABet from './pages/MakeABet'
+import MakeABetForm from './pages/MakeABetForm'
 import Header from './components/Header';
 import LoginForm from './pages/LoginForm';
 import SignUpForm from './pages/SignUpForm';
@@ -70,7 +70,7 @@ function App() {
                   />
                 <Route 
                   path="/bet" 
-                  element={<MakeABet />}
+                  element={<MakeABetForm />}
                 />
               </Routes>
             </div>
