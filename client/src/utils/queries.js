@@ -14,6 +14,25 @@ export const QUERY_USER = gql`
         desc
         createdAt
         postImage
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      profilePic
+      friends
+      bets {
+        _id
+        participants
+        desc
+        createdAt
+        postImage
         comments {
           _id
           commentText
@@ -25,9 +44,10 @@ export const QUERY_USER = gql`
           reactionBody
         }
       }
-    }
+    }  
   }
 `;
+
 
 export const QUERY_BETS = gql`
   query getBets {

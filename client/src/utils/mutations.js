@@ -69,6 +69,14 @@ export const ADD_REACTIONS = gql`
   }
 `;
 
+export const UPDATE_BET = gql`
+  mutation updateBet($betId: String!) {
+    updateBets(betId: $betId) {
+      _id
+    }
+  }
+`;
+
 export const REMOVE_BET = gql`
   mutation removeBet($betId: String!) {
     removeBet(betId: $betId) {
