@@ -68,3 +68,49 @@ export const ADD_REACTIONS = gql`
       }
   }
 `;
+
+export const REMOVE_BET = gql`
+  mutation removeBet($betId: String!) {
+    removeBet(betId: $betId) {
+      _id
+    }
+  }
+`;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($username: String!) {
+    addFriend(username: $username) {
+      token
+      user {
+        friends
+      }
+    }
+  }
+`;
+
+export const REMOVE_FRIEND = gql`
+  mutation removeFriend($username: String!) {
+    removeFriend(username: $username) {
+      token
+      user{
+        friends
+      }
+    }
+  }
+`;
+
+export const REMOVE_REACTIONS = gql`
+  mutation removeReactions($_id: String!, $reactionBody: String!) {
+    removeReactions(_id: $_id, reactionBody: $reactionBody) {
+      _id
+    }
+  }
+`;
+
+export const REMOVE_COMMENTS = gql`
+  mutation removeComments($_id: String!, $commentText: String!) {
+    removeReactions(_id: $_id, commentText: $commentText) {
+      _id
+    }
+  }
+`;
