@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme, formHelperTextClasses } from '@mui/material';
 import CssBaseline from "@mui/material/CssBaseline"
 
 //main theme colors customization for app
@@ -25,11 +25,12 @@ const theme = createTheme({
       // color: "#CCC"
     },
     headingFont: {
-      fontSize: "2.5rem",
+      display: "flex",
+      justifyContent: "center",
+      fontSize: "1.5rem",
       color: "#01579b",
       fontWeight: "bold",
-      align: "center",
-      padding: "2.5rem"
+      // paddingTop: "5rem",
       
     }
 
