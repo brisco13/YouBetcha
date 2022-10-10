@@ -14,9 +14,12 @@ const betSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "user",
-      required: true,
+      // required: true,
     },
-],
+  ],
+  postImage: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -45,7 +48,7 @@ const betSchema = new Schema({
   winner: [{
       type: Schema.Types.ObjectId,
       ref: "user",
-      required: true,
+      // required: true,
     },],
   reactions: [reactionSchema]
 });
