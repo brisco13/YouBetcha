@@ -47,26 +47,27 @@ const typeDefs = gql`
 type Query {
     users: [User]
     user(username: String!): User
-    Comments(betId: ID): [Comment!]!
-    Comm_Reactions(commentId: ID): [Reaction]
-    Bet_Reactions(betId: ID): [Reaction]
-    Bets(betId: ID!): Bet
+    bets(username: String!): [Bet]
+    bet(betId: ID!): Bet
+    bet_Reactions(betId: ID): [Reaction]
+    comments(betId: ID): [Comment!]!
+    comm_Reactions(commentId: ID): [Reaction]
+    getFriends(username: String!): [User]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addBet(desc: String!, participants: [User!]!): Bet
-    updateBet(betId: ID!, desc: String, participants: [User], comments: [Comment], winner: [User]): Bet
+    addBet(desc: String!, participants: [User!]): Bet
+    updateBet(betId: ID!, desc: String, participants: [User], winner: [User]): Bet
     deleteBet(betId: ID!): Bet
-    addComment(betId: ID!): Comment
+    addComment(betId: ID!, commentText: String!, commentAuthor: String!): Comment
     deleteComment(commentId: ID!): Comment
-    betAddReaction(betId: ID!): Reaction
-    commAddReaction(commentId: ID!): Reaction
+    betAddReaction(betId: ID!, reaction: String!, reactionAuthor: String!): Reaction
+    commAddReaction(commentId: ID!, reaction: String!, reactionAuthor: String!): Reaction
     deleteReaction(reactionID: ID!): Reaction
     addFriend(username: String!): User
     deleteFriend(username: String!): User
-    getFriends(username: String!): [User]
   }
 `;
 
