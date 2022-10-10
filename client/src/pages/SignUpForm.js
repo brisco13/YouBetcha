@@ -92,7 +92,7 @@ export default function SignUpForm() {
                 />
                 <TextField
                   className="form-input"
-                  label="Email"
+                  label="email"
                   type="email"
                   name="email"
                   value={formState.email}
