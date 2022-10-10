@@ -39,9 +39,9 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_BET = gql`
-  mutation addBet($desc: String!, $participants: String!, $postImage: String!) { 
+  mutation addBet($desc: String!, $participants: String!, $betAuthor: String!, $postImage: String) { 
     addBet(desc: $desc, 
-    participants: $participants, postImage: $postImage) {
+    participants: $participants, betAuthor: $betAuthor, postImage: $postImage) {
       _id 
       desc
       createdAt
@@ -128,10 +128,19 @@ export const DELETE_REACTIONS = gql`
   }
 `;
 
-export const DELETE_COMMENTS = gql`
-  mutation deleteComments($_id: String!, $commentText: String!) {
-    deleteReactions(_id: $_id, commentText: $commentText) {
+export const ADD_COMMENT = gql`
+  mutation addComment($_id: String!, $commentText: String!, $commentAuthor: String!) {
+    addComment(id: $id, commentText: $commentText) {
       _id
     }
   }
 `;
+
+export const DELETE_COMMENTS = gql`
+  mutation deleteComments($_id: String!) {
+    deleteComents(_id: $_id) {
+      _id
+    }
+  }
+`;
+

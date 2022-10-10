@@ -17,6 +17,11 @@ const betSchema = new Schema({
       // required: true,
     },
   ],
+  betAuthor: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   postImage: {
     type: String,
   },
