@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
+import { BetList } from "../components/ProfileListofBets";
+
 import {
   Container,
   Typography,
@@ -71,7 +73,9 @@ export default function Profile2() {
 
       <Divider />
 
-      <Box>
+      <BetList />
+
+      {/* <Box>
         <Typography
           variant="h6"
           color="primary"
@@ -101,13 +105,13 @@ export default function Profile2() {
         <Paper elevation={24} square>
           date stamp You bet...
         </Paper>
-      </Box>
+      </Box> */}
 
       <Divider />
       <div>
         <Box
           m={2}
-          pt={3}
+          pt={1}
           display="flex"
           alignItems="center"
           justifyContent="center"
