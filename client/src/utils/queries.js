@@ -10,6 +10,7 @@ export const QUERY_USER = gql`
       bets {
         _id
         participants
+        betAuthor
         desc
         createdAt
         postImage
@@ -28,6 +29,7 @@ export const QUERY_ME = gql`
       friends
       bets {
         _id
+        betAuthor
         participants
         desc
         createdAt
@@ -52,6 +54,7 @@ export const QUERY_BETS = gql`
   query getBets {
     getBets {
       _id
+      betAuthor
       participants
       desc
       postImage
@@ -77,6 +80,7 @@ export const QUERY_SINGLE_BET = gql`
     getSingleBet(betId: $betId) {
       _id
       participants
+      betAuthor
       desc
       createdAt
       postImage
@@ -97,14 +101,49 @@ export const QUERY_SINGLE_BET = gql`
 `;
 
 export const QUERY_FRIENDS = gql`
-  query friendBets($friends: String!) { 
-    friendBets(friends: $friends) {
+  query friends($friends: String!) { 
+    friends(friends: $friends) {
       _id
-      username
-      bets {
+      participants
+      betAuthor
+      desc
+      createdAt
+      postImage
+      winner
+      reactions {
         _id
-        desc
-        participants
+        reactionBody
+        createdAt
+      }
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_FRIENDS_BETS = gql`
+  query friendsBets($friends: [String]) {
+    friendsBets(friends: $friends) {
+      _id
+      participants
+      betAuthor
+      desc
+      createdAt
+      postImage
+      winner
+      reactions {
+        _id
+        reactionBody
+        createdAt
+      }
+      comments {
+        _id
+        commentText
+        commentAuthor
         createdAt
       }
     }

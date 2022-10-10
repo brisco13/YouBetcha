@@ -18,6 +18,7 @@ const typeDefs = gql`
   type Bet {
     _id: ID
     desc: String!
+    betAuthor: String
     # check more on this?
     participants: [String]
     createdAt: String
@@ -50,6 +51,7 @@ const typeDefs = gql`
   input BetInput {
     betId: String!
     desc: String! 
+    betAuthor: String
     participants: [String]!
     postImage: String
     # check later
@@ -62,7 +64,6 @@ type Query {
     user(username: String!): User
     getBets: [Bet]
     getSingleBet(betId: ID!): Bet
-    # userBets(username: String): [Bet] - this may not work the way we want it
     bet_Reactions(betId: ID): [Reaction]
     friendBets(friends: [String]): [Bet]
     comments(betId: ID): [Comment]
