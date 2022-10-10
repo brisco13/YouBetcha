@@ -7,7 +7,6 @@ export const QUERY_USER = gql`
       username
       email
       profilePic
-      friends
       bets {
         _id
         participants
@@ -51,7 +50,7 @@ export const QUERY_ME = gql`
 
 export const QUERY_BETS = gql`
   query getBets {
-    bets {
+    getBets {
       _id
       participants
       desc
@@ -74,8 +73,8 @@ export const QUERY_BETS = gql`
 `;
 
 export const QUERY_SINGLE_BET = gql`
-  query getSingleBet($betId: ID!) {
-    bet(betId: $betId) {
+  query getSingleBet($betId: String!) {
+    getSingleBet(betId: $betId) {
       _id
       participants
       desc
@@ -98,10 +97,16 @@ export const QUERY_SINGLE_BET = gql`
 `;
 
 export const QUERY_FRIENDS = gql`
-  query {
-    friends {
+  query friendBets($friends: String!) { 
+    friendBets(friends: $friends) {
       _id
       username
+      bets {
+        _id
+        desc
+        participants
+        createdAt
+      }
     }
   }
 `;

@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Bet, Reaction } = require('../models');
+const { User, Bet } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -13,12 +13,12 @@ const resolvers = {
       return User.findOne({ username }).populate('bets');
     },
     //all bets by username
-    bets: async (parent, { username }) => {
+    getBets: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Bet.find(params).sort({ createdAt: -1 });
     },
     //specific bet by betID
-    bet: async (parent, { betId }) => {
+    getSingleBet: async (parent, { betId }) => {
       return Bet.findOne({ _id: betId });
     },
     //All reactions to a bet by betID
@@ -30,9 +30,9 @@ const resolvers = {
       return Bet.findOne({ _id: betId }).populate('comments');
     },
     //All reactions to a bet by betID
-    comm_Reactions: async (parent, { commentId }) => {
-      return Bet.findOne({ _id: commentId }).populate('reactions');
-    },
+    // comm_Reactions: async (parent, { commentId }) => {
+    //   return Bet.findOne({ _id: commentId }).populate('reactions');
+    // },
     //friends of user by username
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('friends');
@@ -41,8 +41,8 @@ const resolvers = {
   Mutation: {
     // Create User with username, email, and password vars sent to user
     // This may be it for MVP - we may have to pass all vars on creation - or just allow for updates later, but would require a "findAndUpdate" mutation
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { name, username, email, password, profilePic }) => {
+      const user = await User.create({ name, username, email, password, profilePic });
       const token = signToken(user);
       return { token, user };
     },
@@ -58,6 +58,20 @@ const resolvers = {
       }
       const token = signToken(user);
       return { token, user };
+    },
+    //update user info
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            ...args
+          }
+        );
+        const token = signToken(user);
+        return { token, user };
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     // add a bet
     addBet: async (parent, { desc, participants }) => {
@@ -128,12 +142,24 @@ const resolvers = {
         { new: true}
         );
     },
+    // addFriend: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const user = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $addToSet: { friends: args.username } }
+    //     );
+
+    //     const token = signToken(user);
+    //     return { token, user };
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
     deleteFriend: async (parent, { username, friend }) => {
       return User.findOneAndUpdate(
         { username: username},
         { $pull: {friends: {friend}}},
         { new: true}
-        );
+      );
     }
   },
 };

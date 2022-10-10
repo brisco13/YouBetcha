@@ -14,7 +14,7 @@ const reactionSchema = new Schema(
     // maybe have this one be reactionAuthor?
     username: {
       type: String,
-      required: true,
+      // required: true,
     },
     createdAt: {
       type: Date,
