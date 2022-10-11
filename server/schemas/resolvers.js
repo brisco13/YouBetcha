@@ -27,15 +27,21 @@ const resolvers = {
     },
     //All comments on a bet by betID
     comments: async (parent, { betId }) => {
-      return Bet.findOne({ _id: betId }).populate('comments');
+      return await Bet.findOne({ _id: betId }).populate('comments');
     },
     //use this to populate a user's feed -- it only has their friends' bets on it
     friendBets: async (parent, args, context) => {
       if (context.user) {
-        return Bet.find({
+        return await Bet.find({
           betAuthor: { $in: [...args.friends] },
         }).sort({ createdAt: -1 });
       }
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findById(context.user._id);
+      }
+      else {console.log("please log in to do that")}
     },
     //All reactions to a bet by betID
     // comm_Reactions: async (parent, { commentId }) => {
