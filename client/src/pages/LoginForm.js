@@ -57,22 +57,24 @@ const LoginForm = (props) => {
             <div>
                 
               <form onSubmit={handleFormSubmit}>
-                <TextField
+                  <TextField
                   className="form-input"
                   label="Email Address"
                   type="email"
                   name="email"
+                  placeholder='Enter your email address...'
                   fullWidth
                   value={formState.email}
-                    onChange={handleChange}
-                    id="margin-dense" margin="dense"
+                  onChange={handleChange}
+                  margin="dense"
                 />
                 <TextField
+                  placeholder="*******"
                   className="form-input"
                   label="Password"
                   type="password"
-                    name="password"
-                    id="margin-dense" margin="dense"
+                  name="password"
+                  margin="dense"
                   fullWidth
                   value={formState.password}
                   onChange={handleChange}

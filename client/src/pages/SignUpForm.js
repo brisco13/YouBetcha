@@ -61,7 +61,7 @@ export default function SignUpForm() {
               <form onSubmit={handleFormSubmit}>
                 <TextField
                   fullWidth
-                  id="margin-dense" margin="dense"
+                  margin="dense"
                   className="form-input"
                   label="Name"
                   placeholder="Enter your name..."
@@ -83,10 +83,10 @@ export default function SignUpForm() {
                 /> */}
                 <TextField
                   fullWidth
-                    className="form-input"
-                    id="margin-dense" margin="dense"
-                    label="Username"
-                    placeholder="Enter your username..."
+                  className="form-input"
+                  margin="dense"
+                  label="Username"
+                  placeholder="Enter your username..."
                   name="username"
                   type="text"
                   value={formState.username}
@@ -95,11 +95,11 @@ export default function SignUpForm() {
                 />
                 <TextField
                   className="form-input"
-                    label="Email Address"
+                  label="Email Address"
                   placeholder='Enter your email address...'
                   type="email"
-                    name="email"
-                    id="margin-dense" margin="dense"
+                  name="email"
+                  margin="dense"
                   value={formState.email}
                   fullWidth
                   onChange={handleChange}
@@ -109,8 +109,8 @@ export default function SignUpForm() {
                   placeholder="*******"
                   label="Password (use at least 1 letter, 1 number, and 7 characters)"
                   type="password"
-                    name="password"
-                    id="margin-dense" margin="dense"
+                  name="password"
+                  margin="dense"
                   fullWidth
                   value={formState.password}
                   onChange={handleChange}
