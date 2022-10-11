@@ -136,7 +136,7 @@ const resolvers = {
       //   { $addToSet: {//return to here}}
       // );
     },
-    commAddReaction: async (parent, { commentId, reaction, reactionAuthor}) => {},
+    // commAddReaction: async (parent, { commentId, reaction, reactionAuthor}) => {},
     deleteReaction: async (parent, { reactionId}) => {
       return Reaction.findOneAndDelete({ _id: reactionId});
     },

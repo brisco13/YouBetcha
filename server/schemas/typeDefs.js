@@ -23,7 +23,7 @@ const typeDefs = gql`
     participants: [String]
     createdAt: String
     comments: [Comment]
-    winner: [User]
+    winner: [String]
     reactions: [Reaction]
     postImage: String
   }
@@ -37,7 +37,6 @@ const typeDefs = gql`
 
   type Reaction{
     reactionID: ID
-    # do these need to be required?
     reactionBody: String!
     username: String
     createdAt: String
@@ -81,7 +80,7 @@ type Query {
     addComment(betId: ID!, commentText: String!, commentAuthor: String!): Comment
     deleteComment(commentId: ID!): Comment
     betAddReaction(betId: ID!, reaction: String!, reactionAuthor: String!): Reaction
-    commAddReaction(commentId: ID!, reaction: String!, reactionAuthor: String!): Reaction
+    # commAddReaction(commentId: ID!, reaction: String!, reactionAuthor: String!): Reaction
     deleteReaction(reactionID: ID!): Reaction
     addFriend(username: String!): Auth
     deleteFriend(username: String!): Auth
