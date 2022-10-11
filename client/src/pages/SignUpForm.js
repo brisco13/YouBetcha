@@ -51,7 +51,7 @@ export default function SignUpForm() {
           {data ? (
             <p>
               Success! You may now head {' '}
-              <Link to='/'>to the Bet Feed page.</Link>
+              <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
           
@@ -138,7 +138,7 @@ export default function SignUpForm() {
             
           {error && (
             <div>
-              <Typography variant="secondary">You didn't fill in all the fields</Typography>
+              <Typography variant="secondary">Something went wrong, please try again.</Typography>
             </div>
           )}
         </div>
