@@ -13,7 +13,7 @@ const betSchema = new Schema({
   participants: [
     {
       type: Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
       // required: true,
     },
   ],
@@ -52,7 +52,7 @@ const betSchema = new Schema({
   ],
   winner: [{
       type: Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
       // required: true,
     },],
   reactions: [reactionSchema]
