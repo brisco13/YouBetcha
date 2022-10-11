@@ -71,8 +71,8 @@ export default function SignUpForm() {
 
           {data ? (
             <p>
-              Success! You may now head{" "}
-              <Link to="/">to the Bet Feed page.</Link>
+              Success! You may now head {' '}
+              <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
             <div>
