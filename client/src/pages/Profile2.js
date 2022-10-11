@@ -26,32 +26,32 @@ export default function Profile2() {
     variables: { username: userParam },
   });
 
-  const user = data?.me || data?.user || {};
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/profile" />;
-  }
+  // const user = data?.me || data?.user || {};
+  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  //   return <Navigate to="/profile" />;
+  // }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        {" "}
-        <Box>
-          You need to be logged in to participate in You Betcha. Please use the{" "}
-          <Button variant="contained">
-            <Link to="/login">login </Link>
-          </Button>{" "}
-          OR{" "}
-          <Button variant="contained">
-            <Link to="/signup">signup.</Link>
-          </Button>
-        </Box>{" "}
-      </h4>
-    );
-  }
+  // if (!user?.username) {
+  //   return (
+  //     <h4>
+  //       {" "}
+  //       <Box>
+  //         You need to be logged in to participate in You Betcha. Please use the{" "}
+  //         <Button variant="contained">
+  //           <Link to="/login">login </Link>
+  //         </Button>{" "}
+  //         OR{" "}
+  //         <Button variant="contained">
+  //           <Link to="/signup">signup.</Link>
+  //         </Button>
+  //       </Box>{" "}
+  //     </h4>
+  //   );
+  // }
 
   return (
     <Container>
