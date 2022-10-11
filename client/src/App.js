@@ -51,10 +51,10 @@ function App() {
             <Header />
             <div>
               <Routes>
-                <Route path="/" element={<Welcome />} />
+                <Route path="/" element={<SignUpForm />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<LoginForm />} />
-                <Route path="/signup" element={<SignUpForm />} />
+                {/* <Route path="/signup" element={<SignUpForm />} /> */}
                 <Route path="/profile" element={<Profile2 />} />
                 <Route path="/me" element={<Profile2 />} />
                 <Route path="/profiles/:username" element={<Profile2 />} />
