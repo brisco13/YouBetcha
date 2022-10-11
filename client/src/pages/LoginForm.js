@@ -45,7 +45,7 @@ const LoginForm = (props) => {
       {/* could be the Header component later */}
       <Box variant="contained" fullWidth>
         <div className='sign-log-card'>
-          <Typography variant="pFont" gutterBottom> Sign In With Email
+          <Typography variant="pFont" gutterBottom> Log In With Email
           </Typography>
 
           {data ? (
@@ -57,41 +57,57 @@ const LoginForm = (props) => {
             <div>
                 
               <form onSubmit={handleFormSubmit}>
-                <TextField
+                  <TextField
                   className="form-input"
-                  label="email"
+                  label="Email Address"
                   type="email"
                   name="email"
+                  placeholder='Enter your email address...'
                   fullWidth
                   value={formState.email}
                   onChange={handleChange}
+                  margin="dense"
                 />
                 <TextField
+                  placeholder="*******"
                   className="form-input"
-                  label="Password (at least 1 letter, 1 number, and 7 characters"
+                  label="Password"
                   type="password"
                   name="password"
+                  margin="dense"
                   fullWidth
                   value={formState.password}
                   onChange={handleChange}
-                />
+                  />
+                  <Box
+                    m={2}
+                    pt={1}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center">
                 <Button
                   className='submit-btn'
                   variant="contained"
-                  type="submit"
-                  sx={{ m: 3, width: 150 }}
-                >
-                  Log In
-                </Button>
+                      type="submit"
+                      size="large"
+                  sx={{ width: 150 }}
+                >Log In
+                  </Button>
+                </Box>
               </form>
                 
-              <p>
-                <Typography >Don't have an account?</Typography>
-                <Button variant="contained"
+              <Box m={2}
+                    pt={1}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="center">
+                <Typography> Don't have an account?</Typography>
+                <Button variant="outlined"
                   className="sign-log-btn">
                   <Link to="/signup">Sign Up Now!</Link>
                 </Button>
-              </p>
+              </Box>
             </div>
           )}
           

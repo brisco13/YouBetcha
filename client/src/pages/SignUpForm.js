@@ -61,9 +61,10 @@ export default function SignUpForm() {
               <form onSubmit={handleFormSubmit}>
                 <TextField
                   fullWidth
+                  margin="dense"
                   className="form-input"
-                  label="name"
-                  placeholder=" name"
+                  label="Name"
+                  placeholder="Enter your name..."
                   name="name"
                   type="text"
                   value={formState.name}
@@ -83,7 +84,9 @@ export default function SignUpForm() {
                 <TextField
                   fullWidth
                   className="form-input"
-                  label="username or screen name"
+                  margin="dense"
+                  label="Username"
+                  placeholder="Enter your username..."
                   name="username"
                   type="text"
                   value={formState.username}
@@ -92,9 +95,11 @@ export default function SignUpForm() {
                 />
                 <TextField
                   className="form-input"
-                  label="email"
+                  label="Email Address"
+                  placeholder='Enter your email address...'
                   type="email"
                   name="email"
+                  margin="dense"
                   value={formState.email}
                   fullWidth
                   onChange={handleChange}
@@ -102,30 +107,44 @@ export default function SignUpForm() {
                 <TextField
                   className="form-input"
                   placeholder="*******"
-                  label="Password (use at least 1 letter, 1 number, and 7 characters"
+                  label="Password (use at least 1 letter, 1 number, and 7 characters)"
                   type="password"
                   name="password"
+                  margin="dense"
                   fullWidth
                   value={formState.password}
                   onChange={handleChange}
-                />
+                  />
+                  <Box
+                  m={2}
+                  pt={1}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center">
                 <Button className="submit-btn"
                   variant="contained"
                   name="signUp"
                   type="submit"
-                  sx={{ m: 3, width: 150 }}
+                  sx={{ width: 150 }}
                 >
                   Sign Up
-                </Button>
+                    </Button>
+                    </Box>
               </form>
 
-              <p>
+                <Box
+                m={2}
+                pt={1}
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center">
                 <Typography>Already a member?{' '}</Typography>
-                <Button variant="contained"
+                <Button variant="outlined"
                   className="sign-log-btn">
                   <Link to="/login">Log In</Link>
                 </Button>
-              </p>
+                </Box>
             </div>
           )}
             

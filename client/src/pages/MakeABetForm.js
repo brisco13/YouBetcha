@@ -57,12 +57,12 @@ const MakeABetForm = () => {
   return (
     <Container>
       <Typography variant="headingFont" gutterBottom>
-        Place Your Bet!
+        Place Your Bet
       </Typography>
 
        {/* {Auth.loggedIn() ? ( */}
 
-       <>
+
         {/* <p
           // className={`m-0 ${
           //   charCount === 280 || error ? 'text-danger' : ''
@@ -71,12 +71,19 @@ const MakeABetForm = () => {
           Character Count: {charCount}/280
         </p> */}
 
-        <form className='bet-form'>
+        {/* <form className='bet-form'> */}
             {/* need this to search for other people to connect with */}
             {/* onSubmit={handleFormSubmit}> */}
+      <Box
+        component="form"
+        spacing={2}>
           
-          <TextField
-            label="Needs to be a search for other people to connect with"
+        
+          
+        <TextField
+          id="margin-normal" margin="normal"
+          label="Needs to be a search for other people to connect with"
+          type="search"
             name="betDesc"
             placeholder="New bet..."
             value={betDesc.betDesc}
@@ -84,39 +91,54 @@ const MakeABetForm = () => {
             fullWidth
           // onChange={handleChange}
           />
-          <TextField
+        <TextField
+          // required
+          id="margin-dense" margin="dense"
             label="What is the bet?"
-            fullWidth
+          fullWidth
             // value={}
             // onChange={handleChange}
             multiline
             rows={8}
-          />
-    
+        />
+      </Box>
+      
+        <Box
+          m={2}
+          pt={1}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Button variant="contained"
             value="bet"
+            size='large'
             type="submit"
             onClick={console.log("you placed a bet!")}
-            >Share Your Bet!</Button>
-            
+            >Share Your Bet</Button>
+            </Box>
             {/* {error && (
               <div className="">
                 {error.message}
               </div>
             )} */}
           
-        </form>
-      </>
+        {/* </form> */}
+
       
       {/* ) : ( */}
-      <Box>
-        You need to be logged in to share your thoughts. Please{' '}
-          <Button variant="contained">
-            <Link to="/login" >login </Link>
-          </Button>
-          OR
-          <Button variant="contained">
-            <Link to="/signup" >signup.</Link>
+      <Box display="flex"
+          alignItems="center"
+        justifyContent="center"
+        flexDirection="column">
+        You need to be logged in.
+        {' '}
+          <Button variant="outlined">
+            <Link to="/login" >LOGIN </Link>
+        </Button>
+        OR
+          <Button variant="outlined">
+            <Link to="/signup"> SIGN UP</Link>
           </Button>
         </Box>
       {/* )}  */}
