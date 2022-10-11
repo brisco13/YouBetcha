@@ -82,10 +82,10 @@ const MakeABetForm = () => {
           
         <TextField
           id="margin-normal" margin="normal"
-          label="Needs to be a search for other people to connect with"
+          label="Search Friends"
           type="search"
             name="betDesc"
-            placeholder="New bet..."
+            placeholder="Who are you wanting to bet?"
             value={betDesc.betDesc}
             className="form-input"
             fullWidth
@@ -94,7 +94,8 @@ const MakeABetForm = () => {
         <TextField
           // required
           id="margin-dense" margin="dense"
-            label="What is the bet?"
+          label="What is the bet?"
+          placeholder='Write your bet here...'
           fullWidth
             // value={}
             // onChange={handleChange}

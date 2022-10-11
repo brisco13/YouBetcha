@@ -16,43 +16,10 @@ import {
   Grid,
 } from "@mui/material";
 
-import Auth from "../utils/auth";
-import { QUERY_USER } from "../utils/queries";
+
 
 export default function Profile2() {
-  const { username: userParam } = useParams();
-
-  const { loading, data } = useQuery(QUERY_USER, {
-    variables: { username: userParam },
-  });
-
-  // const user = data?.me || data?.user || {};
-  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-  //   return <Navigate to="/profile" />;
-  // }
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (!user?.username) {
-  //   return (
-  //     <h4>
-  //       {" "}
-  //       <Box>
-  //         You need to be logged in to participate in You Betcha. Please use the{" "}
-  //         <Button variant="contained">
-  //           <Link to="/login">login </Link>
-  //         </Button>{" "}
-  //         OR{" "}
-  //         <Button variant="contained">
-  //           <Link to="/signup">signup.</Link>
-  //         </Button>
-  //       </Box>{" "}
-  //     </h4>
-  //   );
-  // }
-
+  
   return (
     <Container>
       <Typography variant="h6" color="primary" fontWeight="bold" gutterBottom>
@@ -107,7 +74,7 @@ export default function Profile2() {
         </Paper>
       </Box> */}
 
-      <Divider />
+      {/* <Divider /> */}
       <div>
         <Box
           m={2}
