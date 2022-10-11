@@ -12,6 +12,9 @@ const userSchema = new Schema({
     unique: true,
     trim: true,
   },
+  profilePic: {
+    type: String,
+  },
   email: {
     type: String,
     required: true,
@@ -26,7 +29,7 @@ const userSchema = new Schema({
   friends: [
     {
       type: Schema.Types.ObjectId,
-      ref: "user"
+      ref: "User"
     },
   ],
   bets: [
@@ -35,12 +38,14 @@ const userSchema = new Schema({
       ref: 'Bet',
     },
   ],
-  comments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Comment',
-    },
-  ],
+  //winner
+
+  // comments: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Comment',
+  //   },
+  // ],
   reactions: [
     {
       type: Schema.Types.ObjectId,

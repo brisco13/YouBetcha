@@ -5,7 +5,7 @@ import { LOGIN_USER } from '../utils/mutations'
 import Auth from '../utils/auth'
 import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
-export default function LoginForm(props) {
+const LoginForm = (props) => {
 
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -59,7 +59,7 @@ export default function LoginForm(props) {
               <form onSubmit={handleFormSubmit}>
                 <TextField
                   className="form-input"
-                  label="Email"
+                  label="email"
                   type="email"
                   name="email"
                   fullWidth
@@ -70,7 +70,7 @@ export default function LoginForm(props) {
                   className="form-input"
                   label="Password (at least 1 letter, 1 number, and 7 characters"
                   type="password"
-                  name="name"
+                  name="password"
                   fullWidth
                   value={formState.password}
                   onChange={handleChange}
@@ -106,3 +106,5 @@ export default function LoginForm(props) {
     </Container>
   );
 };
+
+export default LoginForm;

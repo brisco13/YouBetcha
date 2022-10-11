@@ -7,11 +7,11 @@ import Auth from '../utils/auth';
 
 export default function SignUpForm() {
   const [formState, setFormState] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     username: '',
     email: '',
     password: '',
+    // profilePic: 'http://via.placeholder.com/150',
   });
 
   // const [profilePic, setProfilePic] = useState({});
@@ -62,15 +62,15 @@ export default function SignUpForm() {
                 <TextField
                   fullWidth
                   className="form-input"
-                  label="First Name"
-                  placeholder="first name"
-                  name="firstName"
+                  label="name"
+                  placeholder=" name"
+                  name="name"
                   type="text"
-                  value={formState.firstName}
+                  value={formState.name}
                   onChange={handleChange}
 
                 />
-                <TextField
+                {/* <TextField
                   fullWidth
                   className="form-input"
                   label="Last Name"
@@ -79,25 +79,24 @@ export default function SignUpForm() {
                   value={formState.lastName}
                   onChange={handleChange}
 
-                />
+                /> */}
                 <TextField
                   fullWidth
                   className="form-input"
                   label="username or screen name"
                   name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
 
                 />
                 <TextField
                   className="form-input"
-                  label="Email"
+                  label="email"
                   type="email"
                   name="email"
                   value={formState.email}
                   fullWidth
-                  // value={formState.email}
                   onChange={handleChange}
                 />
                 <TextField

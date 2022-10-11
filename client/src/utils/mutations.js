@@ -14,8 +14,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($name: String!, $username: String!, $email: String!, $password: String!, $profilePic: String) {
+    addUser(name: $name, username: $username, email: $email, password: $password, profilePic: $profilePic) {
       token
       user {
         _id
@@ -25,10 +25,23 @@ export const ADD_USER = gql`
   }
 `;
 
+export const UPDATE_USER = gql`
+  mutation updateUser($profilePic: String) {
+    updateUser(profilePic: $profilePic) {
+      token {
+        user {
+          _id
+          username
+        }
+      }
+    }
+  }
+`;
+
 export const ADD_BET = gql`
-  mutation addBet($betText: String!, $participants: String!) { 
+  mutation addBet($desc: String!, $participants: String!, $betAuthor: String!, $postImage: String) { 
     addBet(desc: $desc, 
-    participants: $participants) {
+    participants: $participants, betAuthor: $betAuthor, postImage: $postImage) {
       _id 
       desc
       createdAt
@@ -68,3 +81,66 @@ export const ADD_REACTIONS = gql`
       }
   }
 `;
+
+export const UPDATE_BET = gql`
+  mutation updateBet($betId: String!) {
+    updateBets(betId: $betId) {
+      _id
+    }
+  }
+`;
+
+export const DELETE_BET = gql`
+  mutation deleteBet($betId: String!) {
+    deleteBet(betId: $betId) {
+      _id
+    }
+  }
+`;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($username: String!) {
+    addFriend(username: $username) {
+      token
+      user {
+        friends
+      }
+    }
+  }
+`;
+
+export const DELETE_FRIEND = gql`
+  mutation deleteFriend($username: String!) {
+    deleteFriend(username: $username) {
+      token
+      user{
+        friends
+      }
+    }
+  }
+`;
+
+export const DELETE_REACTIONS = gql`
+  mutation deleteReactions($_id: String!, $reactionBody: String!) {
+    deleteReactions(_id: $_id, reactionBody: $reactionBody) {
+      _id
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($_id: String!, $commentText: String!, $commentAuthor: String!) {
+    addComment(id: $id, commentText: $commentText) {
+      _id
+    }
+  }
+`;
+
+export const DELETE_COMMENTS = gql`
+  mutation deleteComments($_id: String!) {
+    deleteComents(_id: $_id) {
+      _id
+    }
+  }
+`;
+

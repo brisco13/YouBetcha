@@ -1,25 +1,89 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type file1 {
-    attribute1: String
-    attribute2: String
-    attribute3: String
-    attribute4: String
+  type User {
+    _id: ID
+    name: String!
+    username: String!
+    profilePic: String
+    email: String!
+    password: String!
+    bets: [Bet]
+    comments: [Comment]
+    reactions: [Reaction]
+    # is this how friends should be?
+    friends: [User]
   }
-  type file2 {
-    attribute1: String
-    attribute2: String
-    attribute3: String
-    attribute4: String
+
+  type Bet {
+    _id: ID
+    desc: String!
+    betAuthor: String
+    # check more on this?
+    participants: [String]
+    createdAt: String
+    comments: [Comment]
+    winner: [String]
+    reactions: [Reaction]
+    postImage: String
   }
-  type Query {
-    query1: [file1]
-    query2: [file2]
+
+  type Comment {
+    _id: ID
+    commentText: String!
+    commentAuthor: String!
+    createdAt: String
   }
+
+  type Reaction{
+    reactionID: ID
+    reactionBody: String!
+    username: String
+    createdAt: String
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  input BetInput {
+    betId: String!
+    desc: String! 
+    betAuthor: String
+    participants: [String]!
+    postImage: String
+    # check later
+    winner: String
+  }
+
+type Query {
+    users: [User]
+    me: User
+    user(username: String!): User
+    getBets: [Bet]
+    getSingleBet(betId: ID!): Bet
+    bet_Reactions(betId: ID): [Reaction]
+    friendBets(friends: [String]): [Bet]
+    comments(betId: ID): [Comment]
+    # comm_Reactions(commentId: ID): [Reaction]
+    friends(username: String!): [User]
+  }
+
   type Mutation {
-    mutation1(attribute1: String!, attribute3: String!): file2
-    mutation2(attribute1: String!, attribute3: String!): file2
+    addUser(name: String!, username: String!, email: String!, password: String!, profilePic: String): Auth
+    login(email: String!, password: String!): Auth
+    updateUser( profilePic: String): Auth
+    addBet(betData: BetInput): Bet
+    updateBet(betData: BetInput): Bet
+    deleteBet(betId: ID!): Bet
+    addComment(betId: ID!, commentText: String!, commentAuthor: String!): Comment
+    deleteComment(commentId: ID!): Comment
+    betAddReaction(betId: ID!, reaction: String!, reactionAuthor: String!): Reaction
+    # commAddReaction(commentId: ID!, reaction: String!, reactionAuthor: String!): Reaction
+    deleteReaction(reactionID: ID!): Reaction
+    addFriend(username: String!): Auth
+    deleteFriend(username: String!): Auth
   }
 `;
 

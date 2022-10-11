@@ -63,11 +63,18 @@ function App() {
                   path="/signup" 
                   element={<SignUpForm />}
                 />
+                <Route  
+                  path="/profile" 
+                  element={<Profile2 />}
+                />
                 <Route 
-                  // needs to be path="/profile/:profileId" 
-                    path="/profile" 
-                    element={<Profile2 />}
-                  />
+                  path="/me" 
+                  element={<Profile2 />}
+                />
+                <Route  
+                  path="/profiles/:username" 
+                  element={<Profile2 />}
+                />
                 <Route 
                   path="/bet" 
                   element={<MakeABetForm />}

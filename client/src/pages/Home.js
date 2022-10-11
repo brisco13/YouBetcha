@@ -1,9 +1,8 @@
 // display feed of bets from friend network
 import React, { useState } from 'react';
 import CardBox from '../components/CardBox';
-import { Container, Typography, Button, Link } from '@mui/material';
-
-
+import { Container, Typography, Button } from '@mui/material';
+// import SearchBar from '../components/Header/SearchBar';
 
 export default function Home() {
 
@@ -13,14 +12,14 @@ export default function Home() {
  
   return (
     <Container className="container">
+      {/* <SearchBar/> */}
       <Typography variant="headingFont" >
         Betting Activity
       </Typography>     
-      <div>
+
         {/* this is coming from the components, could be made into where all the current bets go */}
         {/* BetFiller is merely a placeholder for now*/}
         <CardBox /> 
-      </div>  
       
             
        

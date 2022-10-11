@@ -1,17 +1,39 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
-      _id 
+      _id
       username
       email
-      friends
+      profilePic
       bets {
         _id
         participants
+        betAuthor
         desc
         createdAt
+        postImage
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      profilePic
+      friends
+      bets {
+        _id
+        betAuthor
+        participants
+        desc
+        createdAt
+        postImage
         comments {
           _id
           commentText
@@ -21,24 +43,26 @@ export const QUERY_USER = gql`
         reactions {
           _id
           reactionBody
-        } 
+        }
       }
-    }
+    }  
   }
 `;
 
 
 export const QUERY_BETS = gql`
   query getBets {
-    bets {
-      _id 
+    getBets {
+      _id
+      betAuthor
       participants
       desc
-      createdAt 
+      postImage
+      createdAt
       winner
       reactions {
-        _id 
-        reactionBody 
+        _id
+        reactionBody
         createdAt
       }
       comments {
@@ -52,16 +76,18 @@ export const QUERY_BETS = gql`
 `;
 
 export const QUERY_SINGLE_BET = gql`
-  query getSingleBet($betId: ID!) {
-    bet(betId: $betId) {
-      _id 
+  query getSingleBet($betId: String!) {
+    getSingleBet(betId: $betId) {
+      _id
       participants
+      betAuthor
       desc
-      createdAt 
+      createdAt
+      postImage
       winner
       reactions {
-        _id 
-        reactionBody 
+        _id
+        reactionBody
         createdAt
       }
       comments {
@@ -70,7 +96,56 @@ export const QUERY_SINGLE_BET = gql`
         commentAuthor
         createdAt
       }
+    }
+  }
+`;
 
+export const QUERY_FRIENDS = gql`
+  query friends($friends: String!) { 
+    friends(friends: $friends) {
+      _id
+      participants
+      betAuthor
+      desc
+      createdAt
+      postImage
+      winner
+      reactions {
+        _id
+        reactionBody
+        createdAt
+      }
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_FRIENDS_BETS = gql`
+  query friendsBets($friends: [String]) {
+    friendsBets(friends: $friends) {
+      _id
+      participants
+      betAuthor
+      desc
+      createdAt
+      postImage
+      winner
+      reactions {
+        _id
+        reactionBody
+        createdAt
+      }
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `;
