@@ -12,11 +12,11 @@ const Header = () => {
         <Typography 
           align="center"
           gutterBottom
-          variant="h5"
+          fontSize="1rem"
           color="primary"
           fontWeight="bold"
         >
-          You Betcha!
+          YouBetcha!
         </Typography>
       </Box>
     </Container>
