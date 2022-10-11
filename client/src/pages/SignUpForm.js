@@ -11,10 +11,8 @@ export default function SignUpForm() {
     username: '',
     email: '',
     password: '',
-    // profilePic: 'http://via.placeholder.com/150',
   });
 
-  // const [profilePic, setProfilePic] = useState({});
   const [addUser, { error, data }] = useMutation(ADD_USER);
   
   const handleChange = (event) => {
@@ -71,16 +69,6 @@ export default function SignUpForm() {
                   onChange={handleChange}
 
                 />
-                {/* <TextField
-                  fullWidth
-                  className="form-input"
-                  label="Last Name"
-                  name="lastName"
-                  type="text"
-                  value={formState.lastName}
-                  onChange={handleChange}
-
-                /> */}
                 <TextField
                   fullWidth
                   className="form-input"

@@ -7,6 +7,7 @@ import {
 } from "@apollo/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
+import { ProfileProvider } from "./utils/GlobalState";
 
 import Home from "./pages/Home";
 import Profile2 from "./pages/Profile2";
@@ -43,24 +44,26 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <Header />
+      <ProfileProvider> 
+        <Router>
           <div>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<LoginForm />} />
-              <Route path="/signup" element={<SignUpForm />} />
-              <Route path="/profile" element={<Profile2 />} />
-              <Route path="/me" element={<Profile2 />} />
-              <Route path="/profiles/:username" element={<Profile2 />} />
-              <Route path="/bet" element={<MakeABetForm />} />
-            </Routes>
+            <Header />
+            <div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<LoginForm />} />
+                <Route path="/signup" element={<SignUpForm />} />
+                <Route path="/profile" element={<Profile2 />} />
+                <Route path="/me" element={<Profile2 />} />
+                <Route path="/profiles/:username" element={<Profile2 />} />
+                <Route path="/bet" element={<MakeABetForm />} />
+              </Routes>
+            </div>
+            {/* <Navbar /> */}
+            <BottomNav />
           </div>
-          {/* <Navbar /> */}
-          <BottomNav />
-        </div>
-      </Router>
+          </Router>
+        </ProfileProvider>
     </ApolloProvider>
   );
 }
