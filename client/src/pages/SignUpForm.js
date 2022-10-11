@@ -127,11 +127,12 @@ export default function SignUpForm() {
               flexDirection="column"
               alignItems="center"
               justifyContent="center">
-                <Typography>Already a member?{' '}</Typography>
-                <Button variant="outlined"
-                  className="sign-log-btn">
-                  <Link to="/login">Log In</Link>
-                </Button>
+                  <Typography>Already a member?{' '}<Link to="/login">Log In</Link>
+                  </Typography>
+                {/* <Button variant="outlined"
+                  className="sign-log-btn"> */}
+                  
+                {/* </Button> */}
                 </Box>
             </div>
           )}
