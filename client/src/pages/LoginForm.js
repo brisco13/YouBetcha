@@ -7,7 +7,7 @@ import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
 const LoginForm = (props) => {
 
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({  email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   //update state based on form input changes

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
 import { ProfileProvider } from "./utils/GlobalState";
 
+import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import Profile2 from "./pages/Profile2";
 import MakeABetForm from "./pages/MakeABetForm";
@@ -50,7 +51,8 @@ function App() {
             <Header />
             <div>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Welcome />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/signup" element={<SignUpForm />} />
                 <Route path="/profile" element={<Profile2 />} />
@@ -59,7 +61,6 @@ function App() {
                 <Route path="/bet" element={<MakeABetForm />} />
               </Routes>
             </div>
-            {/* <Navbar /> */}
             <BottomNav />
           </div>
           </Router>

@@ -19,7 +19,7 @@ export default function BottomNav() {
   return (
     <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={20}>
       <BottomNavigation showLabels fullWidth value={value} onChange={handleChange}>
-        <Link to="/">
+        <Link to="/home">
           {/* anne here, i think we can move the 'to="/"' right before the icon of Feed, then the words will show up */}
           <BottomNavigationAction
             label="Feed"
