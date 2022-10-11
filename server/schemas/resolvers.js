@@ -94,15 +94,16 @@ const resolvers = {
     },
     //Need help with this one - how do you only update specific fields within a row? Should we be doing a replace? how do we handle the fields not being replaced (i.e. desc could be updated, but what if that field is empty/not updated?)
     //update a bet with the winners
-    updateBet: async (parent, { betId, newDesc, newParticipants, newWinner}) => {
-      // return Bet.findOneAndUpdate (
-      //   {_id: betId},
-      //   {$addToSet: },
-      //   {
-      //     new: true,
-      //     runValidators: true,
-      //   }
-      //   );
+    updateBet: async (parent, { betData }) => {
+      const { betId, desc, participants, winner} = betData;
+      return Bet.findOneAndUpdate (
+        {_id: betId},
+        {desc: desc, participants: participants, winner: winner },
+        {
+          new: true,
+          runValidators: true,
+        }
+        );
     },
     //delete a bet
     deleteBet: async (parent, { betId}) => {
