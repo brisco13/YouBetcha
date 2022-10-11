@@ -26,32 +26,37 @@ export default function Profile2() {
     variables: { username: userParam },
   });
 
-  const user = data?.me || data?.user || {};
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/profile" />;
-  }
+  // const user = data?.me || data?.user || {};
+  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  //   return <Navigate to="/profile" />;
+  // }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        {" "}
-        <Box>
-          You need to be logged in to participate in You Betcha. Please use the{" "}
-          <Button variant="contained">
-            <Link to="/login">login </Link>
-          </Button>{" "}
-          OR{" "}
-          <Button variant="contained">
-            <Link to="/signup">signup.</Link>
-          </Button>
-        </Box>{" "}
-      </h4>
-    );
-  }
+  // if (!user?.username) {
+  //   return (
+  //     <h6>
+  //       {" "}
+  //       <Box
+  //       m={2}
+  //       pt={1}
+  //       display="flex"
+  //       alignItems="center"
+  //       justifyContent="center">
+  //         You need to be logged in to participate in YouBetcha. Please use the{" "}
+  //         <Button variant="outlined">
+  //           <Link to="/login">LOGIN</Link>
+  //         </Button>{" "}
+  //         OR{" "}
+  //         <Button variant="outlined">
+  //           <Link to="/signup">SIGNUP</Link>
+  //         </Button>
+  //       </Box>{" "}
+  //     </h6>
+  //   );
+  // }
 
   return (
     <Container>
@@ -107,7 +112,7 @@ export default function Profile2() {
         </Paper>
       </Box> */}
 
-      <Divider />
+      {/* <Divider /> */}
       <div>
         <Box
           m={2}
