@@ -48,10 +48,10 @@ const typeDefs = gql`
   }
 
   input BetInput {
-    betId: String!
-    desc: String! 
+    betId: ID!
+    desc: String
     betAuthor: String
-    participants: [String]!
+    participants: [String]
     postImage: String
     # check later
     winner: String
