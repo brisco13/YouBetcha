@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations'
 import Auth from '../utils/auth'
-import { Container, Button, Typography, TextField, Box } from '@mui/material';
+import { Container, Button, Typography, TextField, Box, Alert } from '@mui/material';
 
 const LoginForm = (props) => {
 
@@ -137,7 +137,9 @@ const LoginForm = (props) => {
           
           {error && (
             <div>
-              <Typography>Something went wrong. Please reenter your email & password</Typography>
+              <Alert variant="filled" severity="error">
+              Something went wrong. Please try again.
+              </Alert>
             </div>
           )}
 
