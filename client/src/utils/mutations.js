@@ -43,6 +43,7 @@ export const ADD_BET = gql`
     addBet(desc: $desc, participants: $participants) {
       _id 
       desc
+      participants
       createdAt
       winner
       # loser
