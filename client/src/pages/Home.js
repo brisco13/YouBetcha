@@ -1,14 +1,17 @@
 // display feed of bets from friend network
-import React, { useState } from 'react';
+import React from 'react';
+import { useQuery } from '@apollo/client';
 import CardBox from '../components/CardBox';
+import { QUERY_BETS } from '../utils/queries'
 import { Container, Typography, Button } from '@mui/material';
 // import SearchBar from '../components/Header/SearchBar';
+
 
 export default function Home() {
 
 
-  // const { loading, data } = useQuery(QUERY_BETS);
-  // const bets = data?.bets || [];
+  const { loading, data } = useQuery(QUERY_BETS);
+  const bets = data?.bets || [];
  
   return (
     <Container className="container">
