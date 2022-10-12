@@ -90,8 +90,8 @@ const resolvers = {
     },
     // add a bet
     addBet: async (parent, {betData}, context ) => {
-      const betAuthor = context.user.username;
-      const { desc, participants } = betData;
+      //const betAuthor = context.user.username;
+      const { desc, participants, betAuthor } = betData;
       const bet = await Bet.create({ desc , participants , betAuthor});
       // this is looping through the participants array and adding the bet to each of their accounts - will likely need logic to prevent redundant bets on the feed
       // participants just a string (Brisco, Anne, Rachel, Solen)
