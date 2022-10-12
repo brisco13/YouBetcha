@@ -12,7 +12,13 @@ import { Container, Button, Typography, TextField, Box } from '@mui/material';
 const MakeABetForm = () => {
   const [desc, setDesc] = useState('');
   const [participants, setParticipants] = useState('');
-    
+  
+  const betData = {
+      desc: desc,
+      participants: participants,
+      betAuthor: Auth.getProfile().data.username
+    }
+
   const [addBet, { error }] = useMutation(ADD_BET, {
     update(cache, { data: { addBet } }) {
       try {
@@ -30,14 +36,12 @@ const MakeABetForm = () => {
   
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(Auth.getProfile().data._id);
     
+    //console.log(`betInput: ${JSON.stringify(betInput)}`);
     try {
       const { data } = await addBet({
-        variables: {
-          desc,
-          participants,
-          betAuthor: Auth.getProfile().data.username,
-        },
+        variables: { betData },
       });
 
       setDesc('');
