@@ -39,9 +39,8 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_BET = gql`
-  mutation addBet($desc: String!, $participants: String!, $postImage: String) { 
-    addBet(desc: $desc, 
-    participants: $participants, postImage: $postImage) {
+  mutation addBet($desc: String!, $participants: String!) { 
+    addBet(desc: $desc, participants: $participants) {
       _id 
       desc
       createdAt

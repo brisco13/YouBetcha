@@ -50,12 +50,16 @@ const MakeABetForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'desc' && 'participants') {
-      
+    if (name === "desc") {
       setDesc(value);
-      setParticipants(value);
+        
     }
-  }
+    if (name === "participants") {
+      setParticipants(value);
+      
+    }
+    
+  };
   
   
   
