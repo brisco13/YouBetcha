@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_BET } from '../utils/mutations';
 import { QUERY_BETS } from '../utils/queries';
 import Auth from '../utils/auth'
+
 import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
 
 const MakeABetForm = () => {
 
   const [desc, setDesc] = useState('');
-  const [betAuthor, setBetAuthor] = useState('');
-  // const [betTitle, setBetTitle] = useState('');
+  const [participants, setParticipants] = useState('');
+
     
   const [addBet, { error }] = useMutation(ADD_BET, {
     update(cache, { data: { addBet } }) {
@@ -27,31 +28,36 @@ const MakeABetForm = () => {
       }
     },
   });
-
+  
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    
     try {
       const { data } = await addBet({
         variables: {
           desc,
-          betAuthor: Auth.getProfile().data.username,
-          //need the betTitle of participants?
-          // participants: Auth.getProfile().data.username,
+          participants,
         },
       });
+
       setDesc('');
+      setParticipants('');
     } catch (e) {
       console.log(e);
     }
   };
   
   const handleChange = (event) => {
-    const { value } = event.target;
+    const { name, value } = event.target;
+
+    if (name === 'desc' && 'participants') {
+      
       setDesc(value);
+      setParticipants(value);
+    }
   }
   
- 
+  
   
   return (
     <Container>
@@ -67,22 +73,23 @@ const MakeABetForm = () => {
           <Box
             component="form"
             spacing={2}>
-          {/* changing this for right now since we don't have friends or participants working */}
-            {/* <TextField
+          
+            <TextField
               id="margin-normal" margin="normal"
               label="Search Friends"
               type="search"
-              name="desc"
+              name="participants"
               placeholder="Who are you wanting to bet?"
-              value={}
+              value={participants}
               className="form-input"
               fullWidth
               onChange={handleChange}
-            /> */}
+            />
             <TextField
               // required
               id="margin-dense" margin="dense"
               label="What is the bet?"
+              name="desc"
               fullWidth
               rows={8}
               multiline
