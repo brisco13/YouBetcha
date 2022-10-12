@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import { BetList } from "../components/ProfileListofBets";
+import { BetList } from "../components/ProfileBetCard";
 
 import {
   Container,
