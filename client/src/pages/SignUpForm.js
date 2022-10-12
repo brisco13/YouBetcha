@@ -165,9 +165,6 @@ export default function SignUpForm() {
               <Alert variant="filled" severity="error">
               Please fill in all the fields.
               </Alert>
-              {/* <Typography variant="error">
-                You didn't fill in all the fields
-              </Typography> */}
             </div>
           )}
 
