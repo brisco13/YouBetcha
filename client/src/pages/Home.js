@@ -22,7 +22,9 @@ export default function Home() {
 
         {/* this is coming from the components, could be made into where all the current bets go */}
         {/* BetFiller is merely a placeholder for now*/}
-        <CardBox /> 
+      <CardBox /> 
+      
+      
       
             
        
