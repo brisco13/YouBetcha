@@ -51,7 +51,7 @@ const LoginForm = (props) => {
           {data ? (
             <p>
               Success! You may now head {' '}
-              <Link to='/'>to the Bet Feed page.</Link>
+              <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
             <div>
@@ -85,13 +85,13 @@ const LoginForm = (props) => {
                     display="flex"
                     alignItems="center"
                     justifyContent="center">
-                <Button
-                  className='submit-btn'
-                  variant="contained"
-                      type="submit"
-                      size="large"
-                  sx={{ width: 150 }}
-                >Log In
+                    <Button
+                      className='submit-btn'
+                      variant="contained"
+                          type="submit"
+                          size="large"
+                      sx={{ width: 150 }}
+                    >Log In
                   </Button>
                 </Box>
               </form>
@@ -105,7 +105,7 @@ const LoginForm = (props) => {
                 <Typography> Don't have an account?</Typography>
                 <Button variant="outlined"
                   className="sign-log-btn">
-                  <Link to="/signup">Sign Up Now!</Link>
+                  <Link to="/">Sign Up Now!</Link>
                 </Button>
               </Box>
             </div>
@@ -113,7 +113,7 @@ const LoginForm = (props) => {
           
           {error && (
             <div>
-              <Typography variant="secondary">You didn't fill in all the fields</Typography>
+              <Typography>Something went wrong.</Typography>
             </div>
           )}
 

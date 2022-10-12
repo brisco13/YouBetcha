@@ -68,14 +68,15 @@ export default function SignUpForm() {
           >
             Create an Account
           </Typography>
+          
 
+          <div>
           {data ? (
             <p>
               Success! You may now head {' '}
               <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
-            <div>
               <form onSubmit={handleFormSubmit}>
                 <TextField
                     fullWidth
@@ -141,10 +142,22 @@ export default function SignUpForm() {
                     sx={{ width: 200 }}
                   >
                     Sign Up
-                  </Button>
+                    </Button>
+                   
                 </Box>
               </form>
+            )}
+            </div>
 
+
+          {error && (
+            <div>
+              <Typography variant="error">
+                You didn't fill in all the fields
+              </Typography>
+            </div>
+          )}
+          
               <Box
                 m={2}
                 pt={1}
@@ -158,16 +171,6 @@ export default function SignUpForm() {
                   Already a member? <Link to="/login">Log In</Link>
                 </Typography>
               </Box>
-            </div>
-          )}
-
-          {error && (
-            <div>
-              <Typography variant="error">
-                You didn't fill in all the fields
-              </Typography>
-            </div>
-          )}
         </div>
       </Box>
     </Container>
