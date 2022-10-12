@@ -5,21 +5,15 @@ const reactionSchema = require(`./Reaction`);
 const betSchema = new Schema({
   desc: {
     type: String,
-    required: "You must describe the bet!",
     minlength: 1,
     maxlength: 400,
     trim: true,
   },
-  participants: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      // required: true,
-    },
-  ],
+  participants: {
+    type: String,
+  },
   betAuthor: {
     type: String,
-    required: true,
     trim: true,
   },
   postImage: {

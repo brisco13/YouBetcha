@@ -38,6 +38,7 @@ const resolvers = {
       }
     },
     me: async (parent, args, context) => {
+      console.log("username: " + context.user.username)
       if (context.user) {
         return await User.findById(context.user._id);
       }
@@ -88,16 +89,18 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // add a bet
-    addBet: async (parent, { desc, participants }) => {
-      const bet = await Bet.create({ desc, participants });
-      console.log("entered add bet")
+    addBet: async (parent, {betData}, context ) => {
+      const betAuthor = context.user.username;
+      const { desc, participants } = betData;
+      const bet = await Bet.create({ desc , participants , betAuthor});
       // this is looping through the participants array and adding the bet to each of their accounts - will likely need logic to prevent redundant bets on the feed
-      for (const el of participants) {
-        console.log()
+      // participants just a string (Brisco, Anne, Rachel, Solen)
+      // for (const el of participants) {
       await User.findOneAndUpdate(
-        { username: el },
+        { _id: context.user._id },
         { $addToSet: { bets: bet._id } }
-      );};
+      );
+    //};
       return bet;
     },
     //Need help with this one - how do you only update specific fields within a row? Should we be doing a replace? how do we handle the fields not being replaced (i.e. desc could be updated, but what if that field is empty/not updated?)
