@@ -20,7 +20,9 @@ export default function BottomNav() {
 
   return (
     <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={16}>
-      <BottomNavigation
+      <BottomNavigation className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
         value={value}
         onChange={handleChange}>
         <Link to="/home">
