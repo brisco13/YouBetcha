@@ -53,16 +53,16 @@ export const QUERY_ME = gql`
         desc
         createdAt
         postImage
-        comments {
-          _id
-          commentText
-          commentAuthor
-        }
-        winner
-        reactions {
-          _id
-          reactionBody
-        }
+        # comments {
+        #   _id
+        #   commentText
+        #   commentAuthor
+        # }
+        # winner
+        # reactions {
+        #   _id
+        #   reactionBody
+        # }
       }
     }  
   }
@@ -71,7 +71,7 @@ export const QUERY_ME = gql`
 
 export const QUERY_BETS = gql`
   query getBets {
-    getBets {
+    bets {
       _id
       betAuthor
       participants
@@ -79,17 +79,17 @@ export const QUERY_BETS = gql`
       postImage
       createdAt
       winner
-      reactions {
-        _id
-        reactionBody
-        createdAt
-      }
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+      # reactions {
+      #   _id
+      #   reactionBody
+      #   createdAt
+      # }
+      # comments {
+      #   _id
+      #   commentText
+      #   commentAuthor
+      #   createdAt
+      # }
     }
   }
 `;
@@ -104,17 +104,17 @@ export const QUERY_SINGLE_BET = gql`
       createdAt
       postImage
       winner
-      reactions {
-        _id
-        reactionBody
-        createdAt
-      }
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+      # reactions {
+      #   _id
+      #   reactionBody
+      #   createdAt
+      # }
+      # comments {
+      #   _id
+      #   commentText
+      #   commentAuthor
+      #   createdAt
+      # }
     }
   }
 `;
@@ -129,17 +129,17 @@ export const QUERY_FRIENDS = gql`
       createdAt
       postImage
       winner
-      reactions {
-        _id
-        reactionBody
-        createdAt
-      }
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+      # reactions {
+      #   _id
+      #   reactionBody
+      #   createdAt
+      # }
+      # comments {
+      #   _id
+      #   commentText
+      #   commentAuthor
+      #   createdAt
+      # }
     }
   }
 `;
@@ -154,17 +154,17 @@ export const QUERY_FRIENDS_BETS = gql`
       createdAt
       postImage
       winner
-      reactions {
-        _id
-        reactionBody
-        createdAt
-      }
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+      # reactions {
+      #   _id
+      #   reactionBody
+      #   createdAt
+      # }
+      # comments {
+      #   _id
+      #   commentText
+      #   commentAuthor
+      #   createdAt
+      # }
     }
   }
 `;
