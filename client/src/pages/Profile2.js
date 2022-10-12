@@ -3,6 +3,8 @@ import { Navigate, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { BetList } from "../components/ProfileBetCard";
+import BottomNav from '../components/Navbar/BottomNav';
+import "../styles/nav.css"
 
 import {
   Container,
@@ -26,7 +28,6 @@ export default function Profile2() {
         Your Profile
       </Typography>
 
-      {/* <Avatar>LL</Avatar> */}
       <Stack direction="column" spacing={0.5}>
         <Avatar alt="Lindsey Lansford" sx={{ width: 56, height: 56 }}>
           LL
@@ -88,6 +89,7 @@ export default function Profile2() {
           </Button>
         </Box>
       </div>
+      <BottomNav/>
     </Container>
   );
 }

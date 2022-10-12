@@ -14,7 +14,7 @@ import MakeABetForm from "./pages/MakeABetForm";
 import Header from "./components/Header";
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
-import BottomNav from "./components/Navbar/BottomNav";
+// import BottomNav from "./components/Navbar/BottomNav";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -59,7 +59,7 @@ function App() {
                 <Route path="/bet" element={<MakeABetForm />} />
               </Routes>
             </div>
-            <BottomNav />
+            {/* <BottomNav /> */}
           </div>
           </Router>
         

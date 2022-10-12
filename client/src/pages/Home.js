@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import HomepageBetCard from '../components/HomepageBetCard';
 import { QUERY_BETS } from '../utils/queries'
 import { Container, Typography, Button } from '@mui/material';
-// import SearchBar from '../components/Header/SearchBar';
-
+import BottomNav from '../components/Navbar/BottomNav';
+import "../styles/nav.css"
 
 export default function Home() {
 
@@ -22,12 +22,9 @@ export default function Home() {
 
         {/* this is coming from the components, could be made into where all the current bets go */}
         {/* BetFiller is merely a placeholder for now*/}
-      <HomepageBetCard /> 
-      
-      
-      
-            
-       
+      <HomepageBetCard />
+      <BottomNav/>
+
     </Container>
   )
 }

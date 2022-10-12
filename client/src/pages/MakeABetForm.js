@@ -4,7 +4,8 @@ import { useMutation } from '@apollo/client';
 import { ADD_BET } from '../utils/mutations';
 import { QUERY_BETS } from '../utils/queries';
 import Auth from '../utils/auth'
-
+import BottomNav from '../components/Navbar/BottomNav';
+import "../styles/nav.css"
 import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
 
@@ -65,9 +66,8 @@ const MakeABetForm = () => {
         Place Your Bet
       </Typography>
 
-       {Auth.loggedIn() ? (
-         
-         <>
+      {Auth.loggedIn() ? (
+        <>
         <form className='bet-form'
             onSubmit={handleFormSubmit}>
           <Box
@@ -116,11 +116,10 @@ const MakeABetForm = () => {
               <div>
                 {error.message}
               </div>
-            )} 
-          
+            )}
         </form>
 
-       </>
+      </>
       ) : (
         <Box display="flex"
         alignItems="center"
@@ -137,8 +136,9 @@ const MakeABetForm = () => {
           </Button>
         </Box>
       )}
+      <BottomNav/>
     </Container>
-
+  
   );
 };
 
