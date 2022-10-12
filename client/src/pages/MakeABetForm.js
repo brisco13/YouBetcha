@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_BET } from '../utils/mutations';
@@ -10,10 +10,8 @@ import { Container, Button, Typography, TextField, Box } from '@mui/material';
 
 
 const MakeABetForm = () => {
-
   const [desc, setDesc] = useState('');
   const [participants, setParticipants] = useState('');
-
     
   const [addBet, { error }] = useMutation(ADD_BET, {
     update(cache, { data: { addBet } }) {
@@ -38,6 +36,7 @@ const MakeABetForm = () => {
         variables: {
           desc,
           participants,
+          betAuthor: Auth.getProfile().data.username,
         },
       });
 
@@ -53,13 +52,11 @@ const MakeABetForm = () => {
 
     if (name === "desc") {
       setDesc(value);
-        
     }
     if (name === "participants") {
       setParticipants(value);
-      
     }
-    
+  
   };
   
   

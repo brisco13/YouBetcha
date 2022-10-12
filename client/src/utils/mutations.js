@@ -39,14 +39,16 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_BET = gql`
-  mutation addBet($desc: String!, $participants: String!) { 
-    addBet(desc: $desc, participants: $participants) {
+  mutation addBet($desc: String, $participants: String, $betAuthor: String) { 
+    addBet(desc: $desc, participants: $participants, betAuthor: $betAuthor ) {
       _id 
       desc
       participants
       createdAt
+      participants
+      betAuthor
       winner
-      # loser
+      loser
       # comments{
       #   _id   
       #   commentText

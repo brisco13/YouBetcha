@@ -37,7 +37,7 @@ const typeDefs = gql`
 
   type Reaction{
     reactionID: ID
-    reactionBody: String!
+    reactionBody: String
     username: String
     createdAt: String
   }

@@ -1,6 +1,6 @@
 //header component (branding, logo, etc)
 import * as React from 'react'
-
+import { Link } from "react-router-dom";
 import { Container, Button,  Typography, Box } from '@mui/material';
 
 
@@ -9,6 +9,7 @@ const Header = () => {
   return (
     <Container>
       <Box>
+        <Link exact="true" to="/home">
         <Typography 
           align="center"
           gutterBottom
@@ -16,8 +17,9 @@ const Header = () => {
           color="primary"
           fontWeight="bold"
         >
-          YouBetcha!
-        </Typography>
+          You Betcha!
+          </Typography>
+          </Link>
       </Box>
     </Container>
   );
