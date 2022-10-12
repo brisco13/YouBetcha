@@ -1,11 +1,11 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
-const reactionSchema = require(`./reaction`);
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
+const reactionSchema = require(`./Reaction`);
 
 const betSchema = new Schema({
   desc: {
     type: String,
-    required: 'You must describe the bet!',
+    required: "You must describe the bet!",
     minlength: 1,
     maxlength: 400,
     trim: true,
@@ -50,14 +50,16 @@ const betSchema = new Schema({
       reactions: [reactionSchema],
     },
   ],
-  winner: [{
+  winner: [
+    {
       type: Schema.Types.ObjectId,
       ref: "User",
       // required: true,
-    },],
-  reactions: [reactionSchema]
+    },
+  ],
+  reactions: [reactionSchema],
 });
 
-const Bet = model('Bet', betSchema);
+const Bet = model("Bet", betSchema);
 
 module.exports = Bet;
