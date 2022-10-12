@@ -105,7 +105,7 @@ const LoginForm = (props) => {
                 <Typography> Don't have an account?</Typography>
                 <Button variant="outlined"
                   className="sign-log-btn">
-                  <Link to="/">Sign Up Now!</Link>
+                  <Link to="/signup">Sign Up Now!</Link>
                 </Button>
               </Box>
             </div>
