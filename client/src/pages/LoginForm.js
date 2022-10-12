@@ -41,11 +41,33 @@ const LoginForm = (props) => {
   };
 
   return (
-    <Container className='container'>
-      {/* could be the Header component later */}
-      <Box variant="contained" fullWidth>
+    <Container className='container'
+      display="flex">
+      <Box variant="contained" fullwidth="true">
+      <Typography
+          variant="headingFont"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize="2rem"
+        >
+          Welcome
+        </Typography>
+
+        <Typography
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize=".8rem"
+        >
+          Want to keep track of your bets with friends?
+        </Typography>
         <div className='sign-log-card'>
-          <Typography variant="pFont" gutterBottom> Log In With Email
+          <Typography fontWeight="bold"
+            fontSize="1.2rem"
+            mt="2.6rem"
+          >
+            Log in with Email
           </Typography>
 
           {data ? (
@@ -54,28 +76,28 @@ const LoginForm = (props) => {
               <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
-            <div>
-                
               <form onSubmit={handleFormSubmit}>
                   <TextField
+                    size="small"
                   className="form-input"
                   label="Email Address"
                   type="email"
                   name="email"
                   placeholder='Enter your email address...'
-                  fullWidth
+                  fullWidth="true"
                   value={formState.email}
                   onChange={handleChange}
                   margin="dense"
                 />
-                <TextField
+                  <TextField
+                  size="small"
                   placeholder="*******"
                   className="form-input"
                   label="Password"
                   type="password"
                   name="password"
                   margin="dense"
-                  fullWidth
+                  fullWidth="true"
                   value={formState.password}
                   onChange={handleChange}
                   />
@@ -84,36 +106,38 @@ const LoginForm = (props) => {
                     pt={1}
                     display="flex"
                     alignItems="center"
-                    justifyContent="center">
+                    justifyContent="center"
+                    >
                     <Button
                       className='submit-btn'
                       variant="contained"
-                          type="submit"
-                          size="large"
-                      sx={{ width: 150 }}
+                      type="submit"
+                      size="large"
+                      name="login"
+                      sx={{ width: 200 }}
                     >Log In
                   </Button>
                 </Box>
               </form>
-                
-              <Box m={2}
-                    pt={1}
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                  justifyContent="center">
-                <Typography> Don't have an account?</Typography>
-                <Button variant="outlined"
-                  className="sign-log-btn">
-                  <Link to="/signup">Sign Up Now!</Link>
-                </Button>
-              </Box>
-            </div>
           )}
+          
+          <Box
+            m={2}
+            pt={1}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography
+              fontSize=".8rem">
+              Don't have an account? <Link to="/signup">Sign Up Now</Link>
+                  </Typography>
+          </Box>
           
           {error && (
             <div>
-              <Typography>Something went wrong.</Typography>
+              <Typography>Something went wrong. Please reenter your email & password</Typography>
             </div>
           )}
 

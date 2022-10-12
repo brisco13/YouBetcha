@@ -41,9 +41,9 @@ export default function SignUpForm() {
   return (
     <Container className="container"
     display="flex">
-      <Box variant="contained" fullWidth>
+      <Box variant="contained" fullwidth="true">
         <Typography
-          // variant="pFont"
+          variant="headingFont"
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -69,8 +69,6 @@ export default function SignUpForm() {
             Create an Account
           </Typography>
           
-
-          <div>
           {data ? (
             <p>
               Success! You may now head {' '}
@@ -79,8 +77,8 @@ export default function SignUpForm() {
           ) : (
               <form onSubmit={handleFormSubmit}>
                 <TextField
-                    fullWidth
-                    size="small"
+                  fullWidth="true"
+                  size="small"
                   margin="dense"
                   className="form-input"
                   label="Name"
@@ -91,8 +89,8 @@ export default function SignUpForm() {
                   onChange={handleChange}
                 />
                 <TextField
-                    fullWidth
-                    size="small"
+                  fullWidth="true"
+                  size="small"
                   className="form-input"
                   margin="dense"
                   label="Username"
@@ -103,7 +101,7 @@ export default function SignUpForm() {
                   onChange={handleChange}
                 />
                   <TextField
-                    size="small"
+                  size="small"
                   className="form-input"
                   label="Email Address"
                   placeholder="Enter your email address..."
@@ -111,11 +109,11 @@ export default function SignUpForm() {
                   name="email"
                   margin="dense"
                   value={formState.email}
-                  fullWidth
+                  fullWidth="true"
                   onChange={handleChange}
                 />
                   <TextField
-                    size="small"
+                  size="small"
                   className="form-input"
                   placeholder="*******"
                   label="Password"
@@ -123,7 +121,7 @@ export default function SignUpForm() {
                   type="password"
                   name="password"
                   margin="dense"
-                  fullWidth
+                  fullWidth="true"
                   value={formState.password}
                   onChange={handleChange}
                 />
@@ -136,6 +134,7 @@ export default function SignUpForm() {
                 >
                   <Button
                     className="submit-btn"
+                    size="large"
                     variant="contained"
                     name="signUp"
                     type="submit"
@@ -143,19 +142,8 @@ export default function SignUpForm() {
                   >
                     Sign Up
                     </Button>
-                   
                 </Box>
               </form>
-            )}
-            </div>
-
-
-          {error && (
-            <div>
-              <Typography variant="error">
-                You didn't fill in all the fields
-              </Typography>
-            </div>
           )}
           
               <Box
@@ -170,9 +158,18 @@ export default function SignUpForm() {
                   fontSize=".8rem">
                   Already a member? <Link to="/login">Log In</Link>
                 </Typography>
-              </Box>
+          </Box>
+          
+          {error && (
+            <div>
+              <Typography variant="error">
+                You didn't fill in all the fields
+              </Typography>
+            </div>
+          )}
+
         </div>
       </Box>
     </Container>
   );
-}
+};
