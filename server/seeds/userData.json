@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Nora Greer",
+    "email": "luctus.sit.amet@icloud.ca",
+    "password": "LJH65LDS1FR",
+    "guid": "7DEBA9F9-E8EC-8953-C357-81B2D1821C8F",
+    "comment": "eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula.",
+    "reaction": "Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim,",
+    "bet": 13,
+    "friends": ["Sage Dale", "Reece Day", "Maxwell Wolfe", "Len Pace"]
+  },
+  {
+    "name": "Sage Dale",
+    "email": "lacus.varius@icloud.ca",
+    "password": "EVT58YRY4TD",
+    "guid": "8A34CCCB-4999-5B63-9F2F-C07EAD71B6F5",
+    "comment": "felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit",
+    "reaction": "fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed,",
+    "bet": 19,
+    "friends": ["Sage Dale", "Reece Day", "Maxwell Wolfe", "Len Pace"]
+  },
+  {
+    "name": "Reece Day",
+    "email": "luctus@protonmail.edu",
+    "password": "PZQ82HED7CP",
+    "guid": "11D35464-D3EB-FD03-085B-E8456C3657A5",
+    "comment": "eu dui. Cum sociis natoque penatibus et magnis dis parturient",
+    "reaction": "cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam",
+    "bet": 1,
+    "friends": ["Sage Dale", "Reece Day", "Maxwell Wolfe", "Len Pace"]
+  },
+  {
+    "name": "Maxwell Wolfe",
+    "email": "arcu.vivamus.sit@icloud.com",
+    "password": "AYN58DHN8MG",
+    "guid": "A1712AB7-A4A8-6229-0717-931ABCC0DCCE",
+    "comment": "a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam",
+    "reaction": "Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae",
+    "bet": 3,
+    "friends": ["Sage Dale", "Reece Day", "Maxwell Wolfe", "Len Pace"]
+  },
+  {
+    "name": "Len Pace",
+    "email": "et@google.couk",
+    "password": "BRJ94FYC5IW",
+    "_id": "6E76192A-F624-D7E6-2E06-B4561FD28391",
+    "comment": "Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate,",
+    "reaction": "auctor non, feugiat nec, diam. Duis mi enim, condimentum eget,",
+    "bet": 3,
+    "friends": ["Sage Dale", "Reece Day", "Maxwell Wolfe", "Len Pace"]
+  }
+]

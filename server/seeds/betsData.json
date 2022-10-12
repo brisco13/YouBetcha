@@ -1,0 +1,47 @@
+[
+  {
+    "betAuthor": "C97BD68A-F55E-068A-B317-E5395A97CC38",
+    "winner": 19,
+    "desc": "urna. Nullam lobortis quam",
+    "createdAt": "8:49 PM",
+    "comments": "dapibus gravida. Aliquam tincidunt, nunc ac",
+    "participants": 9,
+    "reaction": ":)"
+  },
+  {
+    "betAuthor": "D6CC32E6-8DFA-EE5C-94D4-96D529CDD821",
+    "winner": 17,
+    "desc": "congue turpis. In condimentum. Donec at arcu. Vestibulum ante",
+    "createdAt": "12:28 AM",
+    "comments": "aliquet, metus urna convallis erat,",
+    "participants": 17,
+    "reaction": 1
+  },
+  {
+    "betAuthor": "C1835E2A-E9DF-C0A6-CFDF-445C422836B9",
+    "winner": 15,
+    "desc": "adipiscing lacus. Ut nec urna",
+    "createdAt": "11:39 AM",
+    "comments": "vel arcu eu odio tristique pharetra.",
+    "participants": 13,
+    "reaction": 19
+  },
+  {
+    "betAuthor": "4CE28407-E928-1BB6-CEF8-79CFE74B98D7",
+    "winner": 11,
+    "desc": "magna sed dui. Fusce aliquam,",
+    "createdAt": "8:12 AM",
+    "texcommentst1": "eget laoreet posuere, enim nisl",
+    "participants": 3,
+    "list2": 1
+  },
+  {
+    "betAuthor": "E35C1B14-EC96-33BB-B0C2-C5DA47A35491",
+    "winner": 17,
+    "desc": "lorem, auctor quis, tristique ac, eleifend vitae,",
+    "createdAt": "12:00 PM",
+    "comments": "Etiam gravida molestie arcu.",
+    "participants": 17,
+    "reaction": 3
+  }
+]
