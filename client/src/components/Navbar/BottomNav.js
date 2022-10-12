@@ -18,10 +18,14 @@ export default function BottomNav() {
 
   return (
     <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={20}>
-      <BottomNavigation showLabels fullWidth value={value} onChange={handleChange}>
+      <BottomNavigation
+        fullwidth="true"
+        value={value}
+        onChange={handleChange}>
         <Link to="/home">
           {/* anne here, i think we can move the 'to="/"' right before the icon of Feed, then the words will show up */}
           <BottomNavigationAction
+            // showLabel="true"
             label="Feed"
             value="feed"
             icon={<Feed />}
@@ -29,6 +33,7 @@ export default function BottomNav() {
         </Link>
         <Link to="/bet">
           <BottomNavigationAction
+            // showLabel="true"
             label="Make a Bet"
             value="add-bet"
             icon={<AddCircleIcon />}
@@ -36,6 +41,7 @@ export default function BottomNav() {
         </Link>
         <Link to="/profile">
           <BottomNavigationAction
+            // showLabel="true"
             label="Profile"
             value="profile"
             icon={<PersonPinIcon />}
