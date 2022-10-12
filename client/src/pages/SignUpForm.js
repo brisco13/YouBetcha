@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-import { Container, Button, Typography, TextField, Box } from "@mui/material";
+import { Container, Button, Typography, TextField, Box, Alert } from "@mui/material";
 import Auth from "../utils/auth";
 
 export default function SignUpForm() {
@@ -162,9 +162,12 @@ export default function SignUpForm() {
           
           {error && (
             <div>
-              <Typography variant="error">
+              <Alert variant="filled" severity="error">
+              Please fill in all the fields.
+              </Alert>
+              {/* <Typography variant="error">
                 You didn't fill in all the fields
-              </Typography>
+              </Typography> */}
             </div>
           )}
 
