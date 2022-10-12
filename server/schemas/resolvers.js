@@ -90,8 +90,10 @@ const resolvers = {
     // add a bet
     addBet: async (parent, { desc, participants }) => {
       const bet = await Bet.create({ desc, participants });
+      console.log("entered add bet")
       // this is looping through the participants array and adding the bet to each of their accounts - will likely need logic to prevent redundant bets on the feed
       for (const el of participants) {
+        console.log()
       await User.findOneAndUpdate(
         { username: el },
         { $addToSet: { bets: bet._id } }

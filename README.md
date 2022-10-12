@@ -2,7 +2,6 @@
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/30ede69d-f89c-4338-84d8-be594c598fce/deploy-status)](https://app.netlify.com/sites/youbetcha/deploys)
 
 
 ## Description
@@ -41,8 +40,7 @@ You can access this project here: (put link here) or download and investigate wh
 
 - Clone the repository
 - Run 'npm init' and then 'npm install'
-- Seed the database using: 'npm run seed'
-- run 'npm run start' to begin the execution of the project
+- run 'npm run develop' to begin the execution of the project
 
 ```
 
@@ -62,25 +60,23 @@ There are currently no tests written for this application.
 
 ## Languages, Skills and Credits
 
-(TO BE BEEFED UP/UPDATED)
-
 - Javascript
 - Node.js
 - [Express](https://www.npmjs.com/package/express) is the webserver framework for Node.js.
-- [Sequelize](https://www.npmjs.com/package/sequelize) is used to execute SQL code and CRUD operations.
-- [MYSQL2](https://www.npmjs.com/package/mysql2) is used to initialize the database.
+- [Mongoose](https://www.npmjs.com/package/mongoose) is used to execute SQL code and CRUD operations.
+- [Apollo-Server](https://www.npmjs.com/package/apollo-server-express) is used to initialize the database.
 - [dotenv](https://www.npmjs.com/package/dotenv) is used to host credentials in the environment file. 
-- [nodemailer](https://www.npmjs.com/package/nodemailer) is used to push the ingredient list to the user's email.
-- [Bootstrap](https://getbootstrap.com/)is used to design the layout and look of the app.
-- [bcrypt](https://www.npmjs.com/package/bcrypt) is used to hash passwords.
-- [axios](https://www.npmjs.com/package/axios) provides access to apis from the backend to the browser.
+- [GraphQL](https://graphql.org/) is used to push the ingredient list to the user's email.
+- [Material-UI](https://mui.com/)is used to design the layout and look of the app.
+- [jwt](https://www.npmjs.com/package/jwt) is used to hash passwords.
+- [MongoDB](https://www.mongodb.com/) provides access to apis from the backend to the browser.
 
 ## Screenshots
 
 
 
 ## Questions Links
-[Deployed Link](/brokenlink/)
+[Deployed Link](https://damp-hamlet-25881.herokuapp.com/)
 Github repository for [YouBetcha!](https://github.com/brisco13/YouBetcha)
 
 Contact the creators: [Anne Linger](https://github.com/amccorkl), [Brisco Arechederra](https://github.com/brisco13), [Lindsey Lansford](https://github.com/lindsey-lansford), [Rachel Zaramba](https://github.com/rzaramba),  and [Solen Iyassu](https://github.com/SolenIyassu)
