@@ -95,7 +95,7 @@ Sign Up
 
 ## Questions Links
 
-[Deployed Link](https://you-betcha-143.herokuapp.com/)
+[Deployed Link](https://damp-hamlet-25881.herokuapp.com/)
 
 Github repository for [YouBetcha!](https://github.com/brisco13/YouBetcha)
 
