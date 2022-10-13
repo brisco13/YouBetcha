@@ -10,8 +10,8 @@ import "../styles/nav.css"
 export default function Home() {
 
 
-  const { loading, data } = useQuery(QUERY_BETS);
-  const bets = data?.bets || [];
+  // const { loading, data } = useQuery(QUERY_BETS);
+  // const bets = data?.bets || [];
  
   return (
     <Container className="container">
