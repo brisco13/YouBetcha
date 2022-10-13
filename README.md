@@ -72,8 +72,16 @@ There are currently no tests written for this application.
 - [MongoDB](https://www.mongodb.com/) provides access to apis from the backend to the browser.
 
 ## Screenshots
-
-
+Home Page/Feed
+![picture1](./screenshot/picture1.png "Picture1")
+Make Your Bet
+![picture2](./screenshot/picture2.png "Picture2")
+Profile View
+![picture3](./screenshot/picture3.png "Picture3")
+Login
+![picture4](./screenshot/picture4.png "Picture4")
+Sign Up
+![picture5](./screenshot/picture5.png "Picture5")
 
 ## Questions Links
 [Deployed Link](https://damp-hamlet-25881.herokuapp.com/)
