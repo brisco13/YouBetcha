@@ -15,7 +15,7 @@ const resolvers = {
     //all bets by username
     getBets: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Bet.find(params).sort({ createdAt: -1 });
+      return Bet.find().sort({ createdAt: -1 });
     },
     //specific bet by betID
     getSingleBet: async (parent, { betId }) => {
