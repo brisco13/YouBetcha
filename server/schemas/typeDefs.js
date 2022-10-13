@@ -20,7 +20,7 @@ const typeDefs = gql`
     desc: String!
     betAuthor: String
     # check more on this?
-    participants: [String]
+    participants: String
     createdAt: String
     comments: [Comment]
     winner: [String]
@@ -37,7 +37,7 @@ const typeDefs = gql`
 
   type Reaction{
     reactionID: ID
-    reactionBody: String!
+    reactionBody: String
     username: String
     createdAt: String
   }
@@ -48,10 +48,10 @@ const typeDefs = gql`
   }
 
   input BetInput {
-    betId: ID!
+    betId: ID
     desc: String
     betAuthor: String
-    participants: [String]
+    participants: String
     postImage: String
     # check later
     winner: String

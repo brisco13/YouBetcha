@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { ADD_USER } from '../utils/mutations';
-import { Container, Button, Typography, TextField, Box } from '@mui/material';
-import Auth from '../utils/auth';
+import { ADD_USER } from "../utils/mutations";
+import { Container, Button, Typography, TextField, Box, Alert } from "@mui/material";
+import Auth from "../utils/auth";
 
 export default function SignUpForm() {
   const [formState, setFormState] = useState({
-    name: '',
-    username: '',
-    email: '',
-    password: '',
-    // profilePic: 'http://via.placeholder.com/150',
+    name: "",
+    username: "",
+    email: "",
+    password: "",
   });
 
-  // const [profilePic, setProfilePic] = useState({});
   const [addUser, { error, data }] = useMutation(ADD_USER);
-  
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -41,99 +39,135 @@ export default function SignUpForm() {
   };
 
   return (
-    <Container className="container">
-      {/* could be the Header component later */}
-      <Box variant="contained" fullWidth>
-        <div className="sign-log-card">
+    <Container className="container"
+    display="flex">
+      <Box variant="contained" fullwidth="true">
+        <Typography
+          variant="headingFont"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize="2rem"
+        >
+          Welcome
+        </Typography>
 
-          <Typography variant="pFont" gutterBottom>
+        <Typography
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize=".8rem"
+        >
+          Want to keep track of your bets with friends?
+        </Typography>
+        <div className="sign-log-card">
+          <Typography
+            fontWeight="bold"
+            fontSize="1.2rem"
+            mt="2.2rem"
+          >
             Create an Account
           </Typography>
           
           {data ? (
             <p>
               Success! You may now head {' '}
-              <Link to='/'>to the Bet Feed page.</Link>
+              <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
-          
-            <div>
               <form onSubmit={handleFormSubmit}>
                 <TextField
-                  fullWidth
+                  fullWidth="true"
+                  size="small"
+                  margin="dense"
                   className="form-input"
-                  label="name"
-                  placeholder=" name"
+                  label="Name"
+                  placeholder="Enter your name..."
                   name="name"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
-
                 />
-                {/* <TextField
-                  fullWidth
-                  className="form-input"
-                  label="Last Name"
-                  name="lastName"
-                  type="text"
-                  value={formState.lastName}
-                  onChange={handleChange}
-
-                /> */}
                 <TextField
-                  fullWidth
+                  fullWidth="true"
+                  size="small"
                   className="form-input"
-                  label="username or screen name"
+                  margin="dense"
+                  label="Username"
+                  placeholder="Enter your username..."
                   name="username"
                   type="text"
                   value={formState.username}
                   onChange={handleChange}
-
                 />
-                <TextField
+                  <TextField
+                  size="small"
                   className="form-input"
-                  label="email"
+                  label="Email Address"
+                  placeholder="Enter your email address..."
                   type="email"
                   name="email"
+                  margin="dense"
                   value={formState.email}
-                  fullWidth
+                  fullWidth="true"
                   onChange={handleChange}
                 />
-                <TextField
+                  <TextField
+                  size="small"
                   className="form-input"
                   placeholder="*******"
-                  label="Password (use at least 1 letter, 1 number, and 7 characters"
+                  label="Password"
+                  helperText="Must be at least 1 letter, 1 number, and 7 characters"
                   type="password"
                   name="password"
-                  fullWidth
+                  margin="dense"
+                  fullWidth="true"
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <Button className="submit-btn"
-                  variant="contained"
-                  name="signUp"
-                  type="submit"
-                  sx={{ m: 3, width: 150 }}
+                <Box
+                  m={2}
+                  pt={1}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
                 >
-                  Sign Up
-                </Button>
+                  <Button
+                    className="submit-btn"
+                    size="large"
+                    variant="contained"
+                    name="signUp"
+                    type="submit"
+                    sx={{ width: 200 }}
+                  >
+                    Sign Up
+                    </Button>
+                </Box>
               </form>
-
-              <p>
-                <Typography>Already a member?{' '}</Typography>
-                <Button variant="contained"
-                  className="sign-log-btn">
-                  <Link to="/login">Log In</Link>
-                </Button>
-              </p>
-            </div>
           )}
-            
+          
+              <Box
+                m={2}
+                pt={1}
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+              >
+                  <Typography
+                  fontSize=".8rem">
+                  Already a member? <Link to="/login">Log In</Link>
+                </Typography>
+          </Box>
+          
           {error && (
             <div>
-              <Typography variant="secondary">You didn't fill in all the fields</Typography>
+              <Alert variant="filled" severity="error">
+              Please fill in all the fields.
+              </Alert>
             </div>
           )}
+
         </div>
       </Box>
     </Container>

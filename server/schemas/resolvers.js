@@ -15,7 +15,7 @@ const resolvers = {
     //all bets by username
     getBets: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Bet.find(params).sort({ createdAt: -1 });
+      return Bet.find().sort({ createdAt: -1 });
     },
     //specific bet by betID
     getSingleBet: async (parent, { betId }) => {
@@ -27,15 +27,22 @@ const resolvers = {
     },
     //All comments on a bet by betID
     comments: async (parent, { betId }) => {
-      return Bet.findOne({ _id: betId }).populate('comments');
+      return await Bet.findOne({ _id: betId }).populate('comments');
     },
     //use this to populate a user's feed -- it only has their friends' bets on it
     friendBets: async (parent, args, context) => {
       if (context.user) {
-        return Bet.find({
+        return await Bet.find({
           betAuthor: { $in: [...args.friends] },
         }).sort({ createdAt: -1 });
       }
+    },
+    me: async (parent, args, context) => {
+      console.log("username: " + context.user.username)
+      if (context.user) {
+        return await User.findById(context.user._id);
+      }
+      else {console.log("please log in to do that")}
     },
     //All reactions to a bet by betID
     // comm_Reactions: async (parent, { commentId }) => {
@@ -82,14 +89,18 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // add a bet
-    addBet: async (parent, { desc, participants }) => {
-      const bet = await Bet.create({ desc, participants });
+    addBet: async (parent, {betData}, context ) => {
+      //const betAuthor = context.user.username;
+      const { desc, participants, betAuthor } = betData;
+      const bet = await Bet.create({ desc , participants , betAuthor});
       // this is looping through the participants array and adding the bet to each of their accounts - will likely need logic to prevent redundant bets on the feed
-      for (const el of participants) {
+      // participants just a string (Brisco, Anne, Rachel, Solen)
+      // for (const el of participants) {
       await User.findOneAndUpdate(
-        { username: el },
+        { _id: context.user._id },
         { $addToSet: { bets: bet._id } }
-      );};
+      );
+    //};
       return bet;
     },
     //Need help with this one - how do you only update specific fields within a row? Should we be doing a replace? how do we handle the fields not being replaced (i.e. desc could be updated, but what if that field is empty/not updated?)

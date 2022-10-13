@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations'
 import Auth from '../utils/auth'
-import { Container, Button, Typography, TextField, Box } from '@mui/material';
+import { Container, Button, Typography, TextField, Box, Alert } from '@mui/material';
 
 const LoginForm = (props) => {
 
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({  email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   //update state based on form input changes
@@ -41,63 +41,105 @@ const LoginForm = (props) => {
   };
 
   return (
-    <Container className='container'>
-      {/* could be the Header component later */}
-      <Box variant="contained" fullWidth>
+    <Container className='container'
+      display="flex">
+      <Box variant="contained" fullwidth="true">
+      <Typography
+          variant="headingFont"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize="2rem"
+        >
+          Welcome
+        </Typography>
+
+        <Typography
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize=".8rem"
+        >
+          Want to keep track of your bets with friends?
+        </Typography>
         <div className='sign-log-card'>
-          <Typography variant="pFont" gutterBottom> Sign In With Email
+          <Typography fontWeight="bold"
+            fontSize="1.2rem"
+            mt="2.6rem"
+          >
+            Log in with Email
           </Typography>
 
           {data ? (
             <p>
               Success! You may now head {' '}
-              <Link to='/'>to the Bet Feed page.</Link>
+              <Link to='/home'>to the Bet Feed page.</Link>
             </p>
           ) : (
-            <div>
-                
               <form onSubmit={handleFormSubmit}>
-                <TextField
+                  <TextField
+                    size="small"
                   className="form-input"
-                  label="email"
+                  label="Email Address"
                   type="email"
                   name="email"
-                  fullWidth
+                  placeholder='Enter your email address...'
+                  fullWidth="true"
                   value={formState.email}
                   onChange={handleChange}
+                  margin="dense"
                 />
-                <TextField
+                  <TextField
+                  size="small"
+                  placeholder="*******"
                   className="form-input"
-                  label="Password (at least 1 letter, 1 number, and 7 characters"
+                  label="Password"
                   type="password"
                   name="password"
-                  fullWidth
+                  margin="dense"
+                  fullWidth="true"
                   value={formState.password}
                   onChange={handleChange}
-                />
-                <Button
-                  className='submit-btn'
-                  variant="contained"
-                  type="submit"
-                  sx={{ m: 3, width: 150 }}
-                >
-                  Log In
-                </Button>
+                  />
+                  <Box
+                    m={2}
+                    pt={1}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    >
+                    <Button
+                      className='submit-btn'
+                      variant="contained"
+                      type="submit"
+                      size="large"
+                      name="login"
+                      sx={{ width: 200 }}
+                    >Log In
+                  </Button>
+                </Box>
               </form>
-                
-              <p>
-                <Typography >Don't have an account?</Typography>
-                <Button variant="contained"
-                  className="sign-log-btn">
-                  <Link to="/signup">Sign Up Now!</Link>
-                </Button>
-              </p>
-            </div>
           )}
+          
+          <Box
+            m={2}
+            pt={1}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography
+              fontSize=".8rem">
+              Don't have an account? <Link to="/signup">Sign Up Now</Link>
+                  </Typography>
+          </Box>
           
           {error && (
             <div>
-              <Typography variant="secondary">You didn't fill in all the fields</Typography>
+              <Alert variant="filled" severity="error">
+              Something went wrong. Please try again.
+              </Alert>
             </div>
           )}
 

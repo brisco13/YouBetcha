@@ -14,7 +14,7 @@ import MakeABetForm from "./pages/MakeABetForm";
 import Header from "./components/Header";
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
-import BottomNav from "./components/Navbar/BottomNav";
+// import BottomNav from "./components/Navbar/BottomNav";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -43,24 +43,26 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <Header />
+      
+        <Router>
           <div>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<LoginForm />} />
-              <Route path="/signup" element={<SignUpForm />} />
-              <Route path="/profile" element={<Profile2 />} />
-              <Route path="/me" element={<Profile2 />} />
-              <Route path="/profiles/:username" element={<Profile2 />} />
-              <Route path="/bet" element={<MakeABetForm />} />
-            </Routes>
+            <Header />
+            <div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/login" element={<LoginForm />} />
+                <Route path="/signup" element={<SignUpForm />} />
+                <Route path="/profile" element={<Profile2 />} />
+                <Route path="/me" element={<Profile2 />} />
+                <Route path="/profiles/:username" element={<Profile2 />} />
+                <Route path="/bet" element={<MakeABetForm />} />
+              </Routes>
+            </div>
+            {/* <BottomNav /> */}
           </div>
-          {/* <Navbar /> */}
-          <BottomNav />
-        </div>
-      </Router>
+          </Router>
+        
     </ApolloProvider>
   );
 }

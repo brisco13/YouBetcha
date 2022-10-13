@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+  margin-top: .5rem;
+}
+
+/* button:hover {
+  color: #01579b;
+} */
+
+.nav-link.active {
+  color: #01579b;
+  font-weight: bold;
+}

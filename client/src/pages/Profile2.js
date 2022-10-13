@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import { BetList } from "../components/ProfileListofBets";
+import { BetList } from "../components/ProfileBetCard";
+import BottomNav from '../components/Navbar/BottomNav';
+import "../styles/nav.css"
 
 import {
   Container,
@@ -16,50 +18,16 @@ import {
   Grid,
 } from "@mui/material";
 
-import Auth from "../utils/auth";
-import { QUERY_USER } from "../utils/queries";
+
 
 export default function Profile2() {
-  const { username: userParam } = useParams();
-
-  const { loading, data } = useQuery(QUERY_USER, {
-    variables: { username: userParam },
-  });
-
-  const user = data?.me || data?.user || {};
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/profile" />;
-  }
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user?.username) {
-    return (
-      <h4>
-        {" "}
-        <Box>
-          You need to be logged in to participate in You Betcha. Please use the{" "}
-          <Button variant="contained">
-            <Link to="/login">login </Link>
-          </Button>{" "}
-          OR{" "}
-          <Button variant="contained">
-            <Link to="/signup">signup.</Link>
-          </Button>
-        </Box>{" "}
-      </h4>
-    );
-  }
-
+  
   return (
     <Container>
       <Typography variant="h6" color="primary" fontWeight="bold" gutterBottom>
         Your Profile
       </Typography>
 
-      {/* <Avatar>LL</Avatar> */}
       <Stack direction="column" spacing={0.5}>
         <Avatar alt="Lindsey Lansford" sx={{ width: 56, height: 56 }}>
           LL
@@ -107,7 +75,7 @@ export default function Profile2() {
         </Paper>
       </Box> */}
 
-      <Divider />
+      {/* <Divider /> */}
       <div>
         <Box
           m={2}
@@ -121,6 +89,7 @@ export default function Profile2() {
           </Button>
         </Box>
       </div>
+      <BottomNav/>
     </Container>
   );
 }
