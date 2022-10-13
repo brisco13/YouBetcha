@@ -94,7 +94,9 @@ Sign Up
 ![picture5](./screenshot/picture5.png "Picture5")
 
 ## Questions Links
+
 [Deployed Link](https://you-betcha-143.herokuapp.com/)
+
 Github repository for [YouBetcha!](https://github.com/brisco13/YouBetcha)
 
 Contact the creators: [Anne Linger](https://github.com/amccorkl), [Brisco Arechederra](https://github.com/brisco13), [Lindsey Lansford](https://github.com/lindsey-lansford), [Rachel Zaramba](https://github.com/rzaramba),  and [Solen Iyassu](https://github.com/SolenIyassu)
