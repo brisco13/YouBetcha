@@ -30,7 +30,7 @@ SO THAT I can have tangible evidence of my superiority.
   - [Languages, Skills and Credits](#languages-skills-and-credits)
   - [Screenshots of Wireframe](#screenshots-of-wireframe)
   - [Screenshots of Application](#screenshots-of-application)
-  - [Questions & Links](#questions-&-links)
+  - [Questions and Links](#questions-and-links)
 
 
 ## Installation
@@ -119,7 +119,7 @@ At this time, no tests have been documented for this application.
 
 Please reach out with any questions you may have about this application.
 
-To view the Heroku deployed link, [click here.](https://damp-hamlet-25881.herokuapp.com/)
+**To view the Heroku deployed link, [click here.](https://damp-hamlet-25881.herokuapp.com/)**
 
 Contact the creators: [Anne Linger](https://github.com/amccorkl), [Brisco Arechederra](https://github.com/brisco13), [Lindsey Lansford](https://github.com/lindsey-lansford), [Rachel Zaramba](https://github.com/rzaramba), and [Solen Iyassu](https://github.com/SolenIyassu)
 
