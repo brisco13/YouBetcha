@@ -30,7 +30,7 @@ SO THAT I can have tangible evidence of my superiority.
   - [Languages, Skills and Credits](#languages-skills-and-credits)
   - [Screenshots of Wireframe](#screenshots-of-wireframe)
   - [Screenshots of Application](#screenshots-of-application)
-  - [Questions & Links](#questions-and-links)
+  - [Questions & Links](#questions-&-links)
 
 
 ## Installation
@@ -114,14 +114,12 @@ At this time, no tests have been documented for this application.
 
 ![Profile page browser view](./screenshot/profile.png)
 
-
-[Deployed Link](https://you-betcha-143.herokuapp.com/)
+-----
+## Questions & Links
 
 Please reach out with any questions you may have about this application.
 
 To view the Heroku deployed link, [click here.](https://damp-hamlet-25881.herokuapp.com/)
-
-Github repository for [YouBetcha!](https://github.com/lindsey-lansford/YouBetcha)
 
 Contact the creators: [Anne Linger](https://github.com/amccorkl), [Brisco Arechederra](https://github.com/brisco13), [Lindsey Lansford](https://github.com/lindsey-lansford), [Rachel Zaramba](https://github.com/rzaramba), and [Solen Iyassu](https://github.com/SolenIyassu)
 
