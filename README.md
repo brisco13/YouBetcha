@@ -34,13 +34,14 @@ SO THAT I can have tangible evidence of my superiority.
 
 
 ## Installation
-```
 
-- Clone the repository
-- Run 'npm init' and then 'npm install'
-- run 'npm run develop' to begin the execution of the project
+To install this application, you will need to clone the repo and run a few commands into the terminal. 
 
-```
+**Installs include**:
+
+* ``npm init`` followed by ``npm install`` (These commands will install the dependencies needed for the package.json)
+
+* ``npm run develop`` to begin the execution of the project
 
 ## Usage
 
